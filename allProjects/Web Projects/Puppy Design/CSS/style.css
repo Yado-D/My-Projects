@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+}
+img{
+    width: 100%;
+}
+.puppy-header{
+    background-color: rgb(39, 50, 202);
+
+}
+.puppy-header-txt{
+    color: white;
+}
+.Developer{
+   padding: 20px 0px;
+   background-color: aqua;
+}
+.missing-puppy{
+    background-color: rgb(233, 61, 61);
+}
+
