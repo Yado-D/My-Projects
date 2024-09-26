@@ -53,7 +53,7 @@ class result_page extends StatelessWidget {
           ),
           Center(
             child: Container(
-              margin: EdgeInsets.only(),
+              margin: const EdgeInsets.only(),
               child: CircularPercentIndicator(
                 radius: 100.0,
                 lineWidth: 20.0,
@@ -69,17 +69,17 @@ class result_page extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 60),
+            margin: const EdgeInsets.only(top: 60),
             height: 50,
             width: 50,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/icons/retry.png'),
               ),
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 10),
+            margin: const EdgeInsets.only(top: 10),
             child: InkWell(
               onTap: () {
                 Navigator.of(context).pushNamed('/exam_starting_page');

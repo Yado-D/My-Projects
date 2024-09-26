@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ShapeOfContainer extends StatelessWidget {
-  ShapeOfContainer({super.key});
+  const ShapeOfContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 30),
+      margin: const EdgeInsets.only(top: 30),
       alignment: Alignment.bottomCenter,
       height: 300,
       color: Colors.blue,

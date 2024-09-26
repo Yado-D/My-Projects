@@ -2,19 +2,21 @@ import 'package:exam_collector/utils/AppColorCollections.dart';
 import 'package:flutter/material.dart';
 
 class FaqSection extends StatelessWidget {
+  const FaqSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorCollections.PrimaryColor,
       appBar: AppBar(
         backgroundColor: ColorCollections.PrimaryColor,
-        title: Center(
+        title: const Center(
             child: Text(
           'FAQs',
           style: TextStyle(fontWeight: FontWeight.bold),
         )),
       ),
-      body: SafeArea(
+      body: const SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.all(16.0),
           child: Column(
@@ -45,57 +47,59 @@ class FaqItem extends StatelessWidget {
   final String question;
   final String answer;
 
-  FaqItem({required this.question, required this.answer});
+  const FaqItem({super.key, required this.question, required this.answer});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 2.0,
-      margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8.0),
       ),
       child: ExpansionTile(
         title: Text(
           question,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 16.0,
             color:
                 Color.fromARGB(255, 214, 90, 236), // Customize the text color
           ),
         ),
+        tilePadding: const EdgeInsets.all(16.0), // Adjust tile padding as needed
+        collapsedTextColor: Colors.blue, // Customize collapsed text color
+        iconColor: Colors.blue, // Customize the icon color
+        backgroundColor: Colors.grey[200],
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
               answer,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 14.0,
                 color: Colors.blue, // Customize the text color
               ),
             ),
           ),
-        ],
-        tilePadding: EdgeInsets.all(16.0), // Adjust tile padding as needed
-        collapsedTextColor: Colors.blue, // Customize collapsed text color
-        iconColor: Colors.blue, // Customize the icon color
-        backgroundColor: Colors.grey[200], // Customize background color
+        ], // Customize background color
       ),
     );
   }
 }
 
 class TutorialsSection extends StatelessWidget {
+  const TutorialsSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tutorials'),
+        title: const Text('Tutorials'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -104,14 +108,14 @@ class TutorialsSection extends StatelessWidget {
                     child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                       left: 16,
                       right: 16,
                     ),
                     width: 350,
                     height: 300,
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    child: Column(
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
@@ -141,21 +145,21 @@ class TutorialsSection extends StatelessWidget {
               ),
               // Your Tutorials content here
 
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               Center(
                 child: Card(
                     child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                       left: 16,
                       right: 16,
                     ),
                     width: 350,
                     height: 300,
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    child: Column(
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                    child: const Column(
                       children: [
                         Text(
                           'Troubleshooting Guide:',
@@ -185,21 +189,21 @@ class TutorialsSection extends StatelessWidget {
                 )),
               ),
 
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               Center(
                 child: Card(
                     child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                       left: 16,
                       right: 16,
                     ),
                     width: 350,
                     height: 300,
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    child: Column(
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                    child: const Column(
                       children: [
                         Text(
                           'Troubleshooting Guide:',
@@ -237,17 +241,19 @@ class TutorialsSection extends StatelessWidget {
 }
 
 class TroubleshootingSection extends StatelessWidget {
+  const TroubleshootingSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorCollections.PrimaryColor,
       appBar: AppBar(
         backgroundColor: ColorCollections.PrimaryColor,
-        title: Text('Troubleshooting Tips'),
+        title: const Text('Troubleshooting Tips'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -257,14 +263,14 @@ class TroubleshootingSection extends StatelessWidget {
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: Container(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           left: 16,
                           right: 16,
                         ),
                         width: 350,
                         height: 300,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        child: Column(
+                        color: const Color.fromARGB(255, 255, 255, 255),
+                        child: const Column(
                           children: [
                             Text(
                               'Common Issues and Solutions:',
@@ -304,20 +310,20 @@ class TroubleshootingSection extends StatelessWidget {
                       )),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Center(
                 child: Card(
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: Container(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           left: 16,
                           right: 16,
                         ),
                         width: 350,
                         height: 300,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        child: Column(
+                        color: const Color.fromARGB(255, 255, 255, 255),
+                        child: const Column(
                           children: [
                             Text(
                               'Contact Support:',
@@ -351,17 +357,19 @@ class TroubleshootingSection extends StatelessWidget {
 }
 
 class ContactSupportSection extends StatelessWidget {
+  const ContactSupportSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorCollections.PrimaryColor,
       appBar: AppBar(
         backgroundColor: ColorCollections.PrimaryColor,
-        title: Center(child: Text('Contact Support')),
+        title: const Center(child: Text('Contact Support')),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -370,14 +378,14 @@ class ContactSupportSection extends StatelessWidget {
                     child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                       left: 16,
                       right: 16,
                     ),
                     width: 350,
                     height: 300,
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    child: Column(
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                    child: const Column(
                       children: [
                         Text(
                           'Contact Us:',
@@ -402,20 +410,20 @@ class ContactSupportSection extends StatelessWidget {
                   ),
                 )),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Center(
                 child: Card(
                     child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                       left: 16,
                       right: 16,
                     ),
                     width: 350,
                     height: 300,
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    child: Column(
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                    child: const Column(
                       children: [
                         Text(
                           'Support Hours:',
@@ -449,17 +457,19 @@ class ContactSupportSection extends StatelessWidget {
 }
 
 class UserManualSection extends StatelessWidget {
+  const UserManualSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorCollections.PrimaryColor,
       appBar: AppBar(
         backgroundColor: ColorCollections.PrimaryColor,
-        title: Center(child: Text('User Manual')),
+        title: const Center(child: Text('User Manual')),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -469,14 +479,14 @@ class UserManualSection extends StatelessWidget {
                     child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                       left: 16,
                       right: 16,
                     ),
                     width: 350,
                     height: 300,
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    child: Column(
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                    child: const Column(
                       children: [
                         Text(
                           'User Manual:',
@@ -503,20 +513,22 @@ class UserManualSection extends StatelessWidget {
 }
 
 class HelpSection extends StatelessWidget {
+  const HelpSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorCollections.PrimaryColor,
       appBar: AppBar(
         backgroundColor: ColorCollections.PrimaryColor,
-        title: Center(
+        title: const Center(
           child: Text(
             'Help',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
           ),
         ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -525,14 +537,14 @@ class HelpSection extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(22, 0, 22, 0),
+              padding: const EdgeInsets.fromLTRB(22, 0, 22, 0),
               width: 350,
               child: ListTile(
-                title: Text(
+                title: const Text(
                   'FAQs',
                   style: TextStyle(
                     fontSize: 18,
@@ -543,22 +555,22 @@ class HelpSection extends StatelessWidget {
                 tileColor:
                     Colors.grey[200], // Change the background color as needed
                 contentPadding:
-                    EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
                 onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => FaqSection())),
+                    MaterialPageRoute(builder: (context) => const FaqSection())),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(22, 0, 22, 0),
+              padding: const EdgeInsets.fromLTRB(22, 0, 22, 0),
               width: 350,
               child: ListTile(
-                title: Text(
+                title: const Text(
                   'Tutorials',
                   style: TextStyle(
                     fontSize: 18,
@@ -569,24 +581,24 @@ class HelpSection extends StatelessWidget {
                 tileColor:
                     Colors.grey[200], // Change the background color as needed
                 contentPadding:
-                    EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
                 onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => TutorialsSection())),
+                        builder: (context) => const TutorialsSection())),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(22, 0, 22, 0),
+              padding: const EdgeInsets.fromLTRB(22, 0, 22, 0),
               width: 350,
               child: ListTile(
-                title: Text(
+                title: const Text(
                   'Trobleshooting Tips',
                   style: TextStyle(
                     fontSize: 18,
@@ -597,24 +609,24 @@ class HelpSection extends StatelessWidget {
                 tileColor:
                     Colors.grey[200], // Change the background color as needed
                 contentPadding:
-                    EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
                 onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => TroubleshootingSection())),
+                        builder: (context) => const TroubleshootingSection())),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(22, 0, 22, 0),
+              padding: const EdgeInsets.fromLTRB(22, 0, 22, 0),
               width: 350,
               child: ListTile(
-                title: Text(
+                title: const Text(
                   'Contact Support',
                   style: TextStyle(
                     fontSize: 18,
@@ -625,22 +637,22 @@ class HelpSection extends StatelessWidget {
                 tileColor:
                     Colors.grey[200], // Change the background color as needed
                 contentPadding:
-                    EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
                 onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ContactSupportSection())),
+                        builder: (context) => const ContactSupportSection())),
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Container(
-              padding: EdgeInsets.fromLTRB(22, 0, 22, 0),
+              padding: const EdgeInsets.fromLTRB(22, 0, 22, 0),
               width: 350,
               child: ListTile(
-                title: Text(
+                title: const Text(
                   'User Manual',
                   style: TextStyle(
                     fontSize: 18,
@@ -651,14 +663,14 @@ class HelpSection extends StatelessWidget {
                 tileColor:
                     Colors.grey[200], // Change the background color as needed
                 contentPadding:
-                    EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
                 onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => UserManualSection())),
+                        builder: (context) => const UserManualSection())),
               ),
             ),
           ],

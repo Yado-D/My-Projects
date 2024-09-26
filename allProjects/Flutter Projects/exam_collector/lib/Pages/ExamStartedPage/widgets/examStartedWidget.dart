@@ -5,7 +5,7 @@ Widget ExamContainer() {
   return Stack(
     children: [
       Container(
-        margin: EdgeInsets.only(top: 20, left: 15, right: 15),
+        margin: const EdgeInsets.only(top: 20, left: 15, right: 15),
         height: 290,
         width: 360,
         decoration: BoxDecoration(
@@ -26,11 +26,11 @@ Widget ExamContainer() {
         ),
       ),
       Container(
-        margin: EdgeInsets.only(top: 230, left: 15, right: 15),
+        margin: const EdgeInsets.only(top: 230, left: 15, right: 15),
         child: ExpansionTile(
           onExpansionChanged: (value) {},
-          title: Text('Explanation'),
-          children: [
+          title: const Text('Explanation'),
+          children: const [
             Text('data'),
             Text('data'),
             Text('data'),

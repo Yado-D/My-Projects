@@ -12,11 +12,19 @@ class WelcomePage1 extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          FullPageContainer(),
+          const FullPageContainer(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
+                color: Colors.black,
+                margin: EdgeInsets.only(left:120,top:40),
+                child: Image.asset(
+                  "assets/Images/EC-logo.ico",
+                  height: 170,
+                ),
+              ),
+              SizedBox(
                 height: 98,
                 child: ReusableText(
                   TextString: 'WELCOME TO',
@@ -28,7 +36,7 @@ class WelcomePage1 extends StatelessWidget {
                   TextColor: ColorCollections.SecondaryColor,
                 ),
               ),
-              Container(
+              SizedBox(
                 height: 53,
                 child: ReusableText(
                   TextString: 'EXAM',
@@ -48,7 +56,7 @@ class WelcomePage1 extends StatelessWidget {
               ),
             ],
           ),
-          Positioned(
+          const Positioned(
             bottom: 1,
             child: BottomTextAndButton(),
           ),

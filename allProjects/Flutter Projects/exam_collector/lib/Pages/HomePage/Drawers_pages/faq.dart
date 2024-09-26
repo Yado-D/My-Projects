@@ -8,7 +8,7 @@ class FAQ_pages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: ColorCollections.PrimaryColor,
       body: FaqSection(),
     );

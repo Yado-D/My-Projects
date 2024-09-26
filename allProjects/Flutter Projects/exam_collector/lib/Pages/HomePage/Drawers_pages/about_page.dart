@@ -25,14 +25,14 @@ class AboutPage extends StatelessWidget {
           children: [
             Center(
               child: Container(
-                margin: EdgeInsets.only(top: 40),
+                margin: const EdgeInsets.only(top: 40),
                 height: 300,
                 width: 320,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: ColorCollections.GreyColor,
                 ),
-                child: Column(
+                child: const Column(
                   children: [],
                 ),
               ),

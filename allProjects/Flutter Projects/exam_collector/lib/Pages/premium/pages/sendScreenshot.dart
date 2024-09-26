@@ -14,11 +14,11 @@ class SendScreenShot extends StatelessWidget {
       backgroundColor: ColorCollections.PrimaryColor,
       body: Stack(
         children: [
-          FullPageContainer(),
+          const FullPageContainer(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
+              SizedBox(
                 height: 70,
                 child: ReusableText(
                   FromTop: 10,
@@ -42,10 +42,10 @@ class SendScreenShot extends StatelessWidget {
               ),
               Center(
                 child: Container(
-                  margin: EdgeInsets.only(top: 15),
+                  margin: const EdgeInsets.only(top: 15),
                   height: 150,
                   width: 150,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
                         'assets/icons/add_image.png',
@@ -72,10 +72,10 @@ class SendScreenShot extends StatelessWidget {
               child: Container(
                 height: 40,
                 width: 150,
-                margin: EdgeInsets.only(left: 120, bottom: 40),
+                margin: const EdgeInsets.only(left: 120, bottom: 40),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     fit: BoxFit.fill,
                     image: AssetImage('assets/Images/ButtonColor.jpg'),
                   ),

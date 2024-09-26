@@ -24,14 +24,14 @@ Widget DrawerWidgets({
   required Color? color,
 }) {
   return Container(
-    margin: EdgeInsets.only(top: 20),
+    margin: const EdgeInsets.only(top: 20),
     child: Row(
       children: [
-        Container(
+        SizedBox(
           height: 50,
           width: 50,
           child: Image.asset(
-            'assets/icons/${iconText}.$ImageType',
+            'assets/icons/$iconText.$ImageType',
             color: color,
           ),
         ),
@@ -49,7 +49,7 @@ Widget DrawerWidgets({
 
 Widget carouselSliderImage({required String carouselImage}) {
   return Container(
-    margin: EdgeInsets.only(right: 10),
+    margin: const EdgeInsets.only(right: 10),
     height: 220,
     width: 366,
     decoration: BoxDecoration(
@@ -66,7 +66,7 @@ Widget carouselSliderImage({required String carouselImage}) {
 
 Widget sliverButtonTabImage({required String SliverImage}) {
   return Container(
-    margin: EdgeInsets.only(right: 10, top: 25),
+    margin: const EdgeInsets.only(right: 10, top: 25),
     height: 250,
     width: 150,
     decoration: BoxDecoration(
@@ -83,7 +83,7 @@ Widget sliverButtonTabImage({required String SliverImage}) {
 
 Widget titleBar(BuildContext context, {required Map<String, dynamic>? alpha}) {
   return Container(
-    margin: EdgeInsets.only(top: 10, left: 15),
+    margin: const EdgeInsets.only(top: 10, left: 15),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,11 +101,11 @@ Widget titleBar(BuildContext context, {required Map<String, dynamic>? alpha}) {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(35),
                   color: ColorCollections.SecondaryColor,
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     fit: BoxFit.fill,
                     image: AssetImage('assets/icons/01.png'),
                   ),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       offset: Offset(2, 0),
                       color: ColorCollections.SecondaryColor,
@@ -132,9 +132,9 @@ Widget titleBar(BuildContext context, {required Map<String, dynamic>? alpha}) {
           child: Container(
             height: 50,
             width: 250,
-            margin: EdgeInsets.only(right: 15, top: 10),
+            margin: const EdgeInsets.only(right: 15, top: 10),
             decoration: BoxDecoration(
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   offset: Offset(2, 0),
                   color: ColorCollections.TeritiaryColor,
@@ -146,7 +146,7 @@ Widget titleBar(BuildContext context, {required Map<String, dynamic>? alpha}) {
               borderRadius: BorderRadius.circular(15),
             ),
             child: Container(
-              margin: EdgeInsets.only(left: 15),
+              margin: const EdgeInsets.only(left: 15),
               child: Row(
                 children: [
                   Image.asset(
@@ -208,13 +208,13 @@ Widget DrowerWidget({
   return Stack(
     children: [
       Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 fit: BoxFit.fill,
                 image: AssetImage('assets/Images/DrawerBackgorund.jpg'))),
       ),
       Container(
-        margin: EdgeInsets.only(top: 50, left: 20),
+        margin: const EdgeInsets.only(top: 50, left: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -230,11 +230,11 @@ Widget DrowerWidget({
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(43),
                       color: ColorCollections.SecondaryColor,
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         fit: BoxFit.fill,
                         image: AssetImage('assets/icons/01.png'),
                       ),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           offset: Offset(2, 0),
                           color: ColorCollections.SecondaryColor,
@@ -265,7 +265,7 @@ Widget DrowerWidget({
             ),
             ReusableText(
               FromTop: 0,
-              TextString: alpha!['userPhone'],
+              TextString: alpha['userPhone'],
               FontSize: 22,
               TextFontWeight: FontWeight.w400,
               TextColor: ColorCollections.SecondaryColor,
@@ -378,7 +378,7 @@ Widget HomePageWidget({
             ),
           ),
           SliverToBoxAdapter(
-            child: Container(
+            child: SizedBox(
               height: 220,
               width: 366,
               child: PageView(
@@ -402,14 +402,14 @@ Widget HomePageWidget({
                 position: ind,
                 onTap: (index) {},
                 dotsCount: 3,
-                decorator: DotsDecorator(
+                decorator: const DotsDecorator(
                   activeSize: Size(15, 15),
                   size: Size(8, 8),
                 ),
               ),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(
               height: 10,
             ),
@@ -487,12 +487,12 @@ Widget sliverWidget({
     },
     builder: (context, state) {
       return SliverPadding(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: 10,
         ),
         sliver: SliverGrid(
           gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+              const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
           delegate: SliverChildBuilderDelegate(
             childCount: ListOfImages.length,
             (BuildContext context, int index) {
@@ -508,7 +508,7 @@ Widget sliverWidget({
                     Container(
                       height: 150,
                       width: 180,
-                      margin: EdgeInsets.only(right: 10, bottom: 5, top: 15),
+                      margin: const EdgeInsets.only(right: 10, bottom: 5, top: 15),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15),

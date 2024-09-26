@@ -12,7 +12,7 @@ class exam_starting_page extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorCollections.PrimaryColor,
       body: Container(
-        margin: EdgeInsets.only(top: 120, left: 40),
+        margin: const EdgeInsets.only(top: 120, left: 40),
         child: Stack(
           children: [
             Column(
@@ -41,7 +41,7 @@ class exam_starting_page extends StatelessWidget {
                 InkWell(
                   onTap: () {},
                   child: Container(
-                    margin: EdgeInsets.only(top: 40, left: 20),
+                    margin: const EdgeInsets.only(top: 40, left: 20),
                     child: AppButton(
                       ButtonHeight: 50,
                       ButtonWidth: 180,
@@ -54,7 +54,7 @@ class exam_starting_page extends StatelessWidget {
                 InkWell(
                   onTap: () {},
                   child: Container(
-                    margin: EdgeInsets.only(top: 40, left: 20),
+                    margin: const EdgeInsets.only(top: 40, left: 20),
                     child: AppButton(
                       ButtonHeight: 50,
                       ButtonWidth: 180,
@@ -75,10 +75,10 @@ class exam_starting_page extends StatelessWidget {
                 child: Container(
                   height: 40,
                   width: 150,
-                  margin: EdgeInsets.only(left: 80, bottom: 20, top: 70),
+                  margin: const EdgeInsets.only(left: 80, bottom: 20, top: 70),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       fit: BoxFit.fill,
                       image: AssetImage('assets/Images/ButtonColor.jpg'),
                     ),

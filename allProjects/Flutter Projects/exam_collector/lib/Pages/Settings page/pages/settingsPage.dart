@@ -15,9 +15,9 @@ class SettingsPage extends StatelessWidget {
       backgroundColor: ColorCollections.PrimaryColor,
       body: Stack(
         children: [
-          FullPageContainer(),
+          const FullPageContainer(),
           Container(
-            margin: EdgeInsets.only(top: 20, left: 30, right: 30),
+            margin: const EdgeInsets.only(top: 20, left: 30, right: 30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -46,22 +46,22 @@ class SettingsPage extends StatelessWidget {
                     Navigator.of(context)
                         .pushNamed('/account_page', arguments: alpha);
                   },
-                  iconData: Icon(Icons.person),
+                  iconData: const Icon(Icons.person),
                   text: 'yared dereje',
                 ),
                 settingRowWidget(
                   ontap: () {},
-                  iconData: Icon(Icons.lock_open_outlined),
+                  iconData: const Icon(Icons.lock_open_outlined),
                   text: 'Password',
                 ),
                 settingRowWidget(
                   ontap: () {},
-                  iconData: Icon(Icons.notifications_active),
+                  iconData: const Icon(Icons.notifications_active),
                   text: 'Notification',
                 ),
                 settingRowWidget(
                   ontap: () {},
-                  iconData: Icon(Icons.help),
+                  iconData: const Icon(Icons.help),
                   text: 'Help',
                 ),
               ],
@@ -78,7 +78,7 @@ class SettingsPage extends StatelessWidget {
     required VoidCallback ontap,
   }) {
     return Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         left: 25,
         right: 25,
         top: 20,
@@ -105,7 +105,7 @@ class SettingsPage extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.grey.shade300,
                   borderRadius: BorderRadius.circular(10)),
-              child: Icon(Icons.arrow_forward_ios),
+              child: const Icon(Icons.arrow_forward_ios),
             ),
           ),
         ],

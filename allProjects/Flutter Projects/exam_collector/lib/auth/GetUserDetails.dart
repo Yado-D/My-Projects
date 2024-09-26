@@ -12,6 +12,7 @@ class Getuserdetails {
         .map((snapshot) {
       return snapshot.docs.map((snap) {
         final user = snap.data();
+        print(user);
         return user;
       }).toList();
     });

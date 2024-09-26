@@ -24,7 +24,7 @@ class _SignUpPageState extends State<SignUpPage> {
         children: [
           Stack(
             children: [
-              FullPageContainer(),
+              const FullPageContainer(),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -167,10 +167,10 @@ class _SignUpPageState extends State<SignUpPage> {
                   child: Container(
                     height: 40,
                     width: 150,
-                    margin: EdgeInsets.only(left: 20, bottom: 40),
+                    margin: const EdgeInsets.only(left: 20, bottom: 40),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         fit: BoxFit.fill,
                         image: AssetImage('assets/Images/ButtonColor.jpg'),
                       ),

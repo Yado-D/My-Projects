@@ -41,7 +41,7 @@ class exam_started_page extends StatelessWidget {
           Stack(
             children: [
               Container(
-                margin: EdgeInsets.only(top: 20, left: 15, right: 15),
+                margin: const EdgeInsets.only(top: 20, left: 15, right: 15),
                 height: 290,
                 width: 360,
                 decoration: BoxDecoration(
@@ -62,12 +62,12 @@ class exam_started_page extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 230, left: 15, right: 18),
+                margin: const EdgeInsets.only(top: 230, left: 15, right: 18),
                 child: ExpansionTile(
                   backgroundColor: Colors.amber.shade100,
                   onExpansionChanged: (value) {},
-                  title: Text('Explanation'),
-                  children: [
+                  title: const Text('Explanation'),
+                  children: const [
                     Text('data'),
                     Text('data'),
                     Text('data'),
@@ -79,7 +79,7 @@ class exam_started_page extends StatelessWidget {
         ],
       ),
       floatingActionButton: Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           left: 20,
           bottom: 15,
         ),
@@ -90,7 +90,7 @@ class exam_started_page extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pushNamed('/result_page');
           },
-          child: Text('Finished'),
+          child: const Text('Finished'),
         ),
       ),
     );

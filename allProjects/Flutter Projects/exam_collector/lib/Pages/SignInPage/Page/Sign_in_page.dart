@@ -25,7 +25,7 @@ class _SignInPageState extends State<SignInPage> {
             children: [
               Stack(
                 children: [
-                  FullPageContainer(),
+                  const FullPageContainer(),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -129,10 +129,10 @@ class _SignInPageState extends State<SignInPage> {
                       child: Container(
                         height: 40,
                         width: 150,
-                        margin: EdgeInsets.only(left: 20, bottom: 40),
+                        margin: const EdgeInsets.only(left: 20, bottom: 40),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          image: DecorationImage(
+                          image: const DecorationImage(
                             fit: BoxFit.fill,
                             image: AssetImage('assets/Images/ButtonColor.jpg'),
                           ),
@@ -160,8 +160,8 @@ class _SignInPageState extends State<SignInPage> {
                             borderRadius: BorderRadius.circular(7)),
                         height: 50,
                         width: 50,
-                        margin: EdgeInsets.symmetric(vertical: 400),
-                        child: Center(
+                        margin: const EdgeInsets.symmetric(vertical: 400),
+                        child: const Center(
                           child: CircularProgressIndicator(
                             color: Colors.blue,
                           ),

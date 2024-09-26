@@ -28,7 +28,7 @@ class EXAM_QUESTION_MODEL extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 10),
+          margin: const EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 10),
           child: ReusableText(
             TextString: EXAM_QUESTION,
             FontSize: 18,
@@ -86,7 +86,7 @@ class EXAM_QUESTION_MODEL extends StatelessWidget {
 
   Widget CheckAnswers({required String checkIconName}) {
     return Container(
-      margin: EdgeInsets.only(right: 40),
+      margin: const EdgeInsets.only(right: 40),
       height: 30,
       width: 30,
       decoration: BoxDecoration(
@@ -113,7 +113,7 @@ class EXAM_QUESTION_MODEL extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            margin: EdgeInsets.only(
+            margin: const EdgeInsets.only(
               left: 10,
               right: 10,
             ),

@@ -12,7 +12,7 @@ commonSnackBar(BuildContext context, String TextString) {
           color: Colors.white,
           border: Border.all(width: 2.0, color: Colors.black),
           borderRadius: BorderRadius.circular(20), // Rounded corners
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(blurRadius: 10, color: Colors.grey)
           ], // Add a blur effect
         ),
@@ -32,7 +32,7 @@ commonSnackBar(BuildContext context, String TextString) {
       backgroundColor: Colors.transparent,
       elevation: 1000,
       behavior: SnackBarBehavior.floating,
-      duration: Duration(seconds: 6),
+      duration: const Duration(seconds: 6),
     ),
   );
 }

@@ -11,7 +11,7 @@ class exam_page extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorCollections.PrimaryColor,
       body: Container(
-        margin: EdgeInsets.only(left: 30),
+        margin: const EdgeInsets.only(left: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -75,10 +75,10 @@ class exam_page extends StatelessWidget {
               child: Container(
                 height: 40,
                 width: 150,
-                margin: EdgeInsets.only(left: 80, bottom: 20, top: 70),
+                margin: const EdgeInsets.only(left: 80, bottom: 20, top: 70),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     fit: BoxFit.fill,
                     image: AssetImage('assets/Images/ButtonColor.jpg'),
                   ),

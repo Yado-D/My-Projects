@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class account_page extends StatelessWidget {
   final Map<String, dynamic>? alpha;
-  account_page({
+  const account_page({
     this.alpha,
     super.key,
   });
@@ -14,9 +14,9 @@ class account_page extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          FullPageContainer(),
+          const FullPageContainer(),
           Container(
-            margin: EdgeInsets.only(top: 20, left: 30, right: 30),
+            margin: const EdgeInsets.only(top: 20, left: 30, right: 30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -35,7 +35,7 @@ class account_page extends StatelessWidget {
                         radius: 60,
                         child: InkWell(
                           onTap: () {},
-                          child: Icon(
+                          child: const Icon(
                             Icons.person_add_alt_1,
                             size: 60,
                           ),
@@ -91,7 +91,7 @@ class account_page extends StatelessWidget {
     required String title,
   }) {
     return Container(
-      margin: EdgeInsets.only(top: 20, left: 0, right: 0),
+      margin: const EdgeInsets.only(top: 20, left: 0, right: 0),
       child: Row(
         children: [
           ReusableText(

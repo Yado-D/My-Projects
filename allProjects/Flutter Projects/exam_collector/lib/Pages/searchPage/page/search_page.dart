@@ -17,7 +17,7 @@ class search_page extends StatelessWidget {
             Container(
               height: 180,
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: ColorCollections.SecondaryColor,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(
@@ -52,18 +52,18 @@ class search_page extends StatelessWidget {
               TextFontWeight: FontWeight.w700,
               TextColor: ColorCollections.SecondaryColor,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(
+                  margin: const EdgeInsets.only(
                     left: 40,
                   ),
                   height: 30,
                   width: 30,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/icons/retry.png'),
                     ),

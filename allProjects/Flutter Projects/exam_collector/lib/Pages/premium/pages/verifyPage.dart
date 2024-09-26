@@ -13,11 +13,11 @@ class VerifyPage extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          FullPageContainer(),
+          const FullPageContainer(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
+              SizedBox(
                 height: 70,
                 child: ReusableText(
                   FromTop: 10,
@@ -41,10 +41,10 @@ class VerifyPage extends StatelessWidget {
               ),
               Center(
                 child: Container(
-                  margin: EdgeInsets.only(top: 15),
+                  margin: const EdgeInsets.only(top: 15),
                   height: 70,
                   width: 70,
-                  child: CircularProgressIndicator(),
+                  child: const CircularProgressIndicator(),
                 ),
               ),
               Center(

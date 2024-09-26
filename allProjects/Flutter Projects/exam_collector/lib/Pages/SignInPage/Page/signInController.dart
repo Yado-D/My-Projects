@@ -38,12 +38,6 @@ class SigninController {
             email: emailAddress,
             password: password,
           );
-
-          if (credential == null) {
-            //no user found
-            toastInfo(msg: "There is no account on this address!");
-            return;
-          }
           if (!credential.user!.emailVerified) {
             //check your inbox
             toastInfo(msg: "You need to verify your email address!");

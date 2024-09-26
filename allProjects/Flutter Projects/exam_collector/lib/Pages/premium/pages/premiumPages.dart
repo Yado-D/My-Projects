@@ -6,7 +6,7 @@ import '../../../widgets/AllCommonWidget.dart';
 import '../Widgets/PremiumWidget.dart';
 
 class Premiumpages extends StatefulWidget {
-  Premiumpages({super.key});
+  const Premiumpages({super.key});
 
   @override
   State<Premiumpages> createState() => _PremiumpagesState();
@@ -22,7 +22,7 @@ class _PremiumpagesState extends State<Premiumpages> {
     return Scaffold(
       body: Stack(
         children: [
-          FullPageContainer(),
+          const FullPageContainer(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -35,7 +35,7 @@ class _PremiumpagesState extends State<Premiumpages> {
                 TextFontWeight: FontWeight.bold,
               ),
               Container(
-                margin: EdgeInsets.only(
+                margin: const EdgeInsets.only(
                   top: 30,
                 ),
                 child: CarouselSlider.builder(

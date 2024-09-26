@@ -16,7 +16,7 @@ class FullPageContainer extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.fill,
           image: AssetImage('assets/Images/WelcomePageBackgroundImage.jpg'),
@@ -99,7 +99,7 @@ class AppButton extends StatelessWidget {
       height: ButtonHeight,
       width: ButtonWidth,
       decoration: BoxDecoration(
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: ColorCollections.TeritiaryColor,
             spreadRadius: 2,
@@ -158,7 +158,7 @@ Widget reusableTextField({
         Container(
           height: 16.w,
           width: 16.w,
-          margin: EdgeInsets.only(left: 17),
+          margin: const EdgeInsets.only(left: 17),
           child: Image.asset("assets/icons/$icon_name.png"),
         ),
         SizedBox(
@@ -171,22 +171,22 @@ Widget reusableTextField({
               // suffixIcon: suffixIcon,
               hintText: hintText,
               hintStyle: TextStyle(color: Colors.grey.withOpacity(0.5)),
-              border: OutlineInputBorder(
+              border: const OutlineInputBorder(
                 borderSide: BorderSide(
                   color: Colors.transparent,
                 ),
               ),
-              enabledBorder: OutlineInputBorder(
+              enabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(
                   color: Colors.transparent,
                 ),
               ),
-              disabledBorder: OutlineInputBorder(
+              disabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(
                   color: Colors.transparent,
                 ),
               ),
-              focusedBorder: OutlineInputBorder(
+              focusedBorder: const OutlineInputBorder(
                 borderSide: BorderSide(
                   color: Colors.transparent,
                 ),
@@ -199,7 +199,7 @@ Widget reusableTextField({
           Container(
             height: 16.w,
             width: 16.w,
-            margin: EdgeInsets.only(left: 17),
+            margin: const EdgeInsets.only(left: 17),
             child: Image.asset("assets/icons/$suffix_icon_name.png"),
           ),
       ],
@@ -220,8 +220,8 @@ List<Widget> bottomNavBarPages({
       ind: indexOfCarousel,
       alpha: alpha,
     ),
-    search_page(),
-    exam_page(),
+    const search_page(),
+    const exam_page(),
     CommentPageWidget(),
   ];
 }

@@ -37,54 +37,54 @@ class NamedRouteSettings {
     return [
       pageEntity(
         route: NamedRoutes.WELCOCME_PAGE1,
-        page: WelcomePage1(),
+        page: const WelcomePage1(),
       ),
       pageEntity(
         route: NamedRoutes.WELCOCME_PAGE2,
-        page: WelcomePage2(),
+        page: const WelcomePage2(),
         bloc: BlocProvider(
           create: (_) => WelcomePage2Bloc(),
         ),
       ),
       pageEntity(
         route: NamedRoutes.WELCOCME_PAGE3,
-        page: WelcomePage3(),
+        page: const WelcomePage3(),
         bloc: BlocProvider(
           create: (_) => Welcomepage3bloc(),
         ),
       ),
       pageEntity(
         route: NamedRoutes.WELCOCME_PAGE4,
-        page: Welcomepage4(),
+        page: const Welcomepage4(),
         bloc: BlocProvider(
           create: (_) => Welcomepage4blocs(),
         ),
       ),
       pageEntity(
         route: NamedRoutes.SIGNIN_PAGE,
-        page: SignInPage(),
+        page: const SignInPage(),
         bloc: BlocProvider(
           create: (_) => SignInBloc(),
         ),
       ),
       pageEntity(
         route: NamedRoutes.SIGNUP_PAGE,
-        page: SignUpPage(),
+        page: const SignUpPage(),
         bloc: BlocProvider(
           create: (_) => SignUpBloc(),
         ),
       ),
       pageEntity(
         route: NamedRoutes.HOME_PAGE,
-        page: home_page(),
+        page: const home_page(),
       ),
       pageEntity(
         route: NamedRoutes.PREMIUM_PAGE,
-        page: Premiumpages(),
+        page: const Premiumpages(),
       ),
       pageEntity(
         route: NamedRoutes.HOME_PAGE,
-        page: home_page(),
+        page: const home_page(),
         bloc: BlocProvider(
           create: (_) => HomePageBloc(),
         ),
@@ -98,98 +98,98 @@ class NamedRouteSettings {
       ),
       pageEntity(
         route: NamedRoutes.EXAM_STARTED_PAGE,
-        page: exam_started_page(),
+        page: const exam_started_page(),
         // bloc: BlocProvider(
         //   create: (_) => HomePageBloc(),
         // ),
       ),
       pageEntity(
         route: NamedRoutes.RESULT_PAGE,
-        page: result_page(),
+        page: const result_page(),
         // bloc: BlocProvider(
         //   create: (_) => HomePageBloc(),
         // ),
       ),
       pageEntity(
         route: NamedRoutes.SEARCH_PAGE,
-        page: search_page(),
+        page: const search_page(),
         // bloc: BlocProvider(
         //   create: (_) => HomePageBloc(),
         // ),
       ),
       pageEntity(
         route: NamedRoutes.SETTINGS_PAGE,
-        page: SettingsPage(),
+        page: const SettingsPage(),
         // bloc: BlocProvider(
         //   create: (_) => HomePageBloc(),
         // ),
       ),
       pageEntity(
         route: NamedRoutes.ACCOUNT_PAGE,
-        page: account_page(),
+        page: const account_page(),
         // bloc: BlocProvider(
         //   create: (_) => HomePageBloc(),
         // ),
       ),
       pageEntity(
         route: NamedRoutes.PAYMENT_PAGE,
-        page: PaymentMethods(),
+        page: const PaymentMethods(),
         // bloc: BlocProvider(
         //   create: (_) => HomePageBloc(),
         // ),
       ),
       pageEntity(
         route: NamedRoutes.CHECKSCREENSHOOT_PAGE,
-        page: SendScreenShot(),
+        page: const SendScreenShot(),
         // bloc: BlocProvider(
         //   create: (_) => HomePageBloc(),
         // ),
       ),
       pageEntity(
         route: NamedRoutes.VERIFY_PAGE,
-        page: VerifyPage(),
+        page: const VerifyPage(),
         // bloc: BlocProvider(
         //   create: (_) => HomePageBloc(),
         // ),
       ),
       pageEntity(
         route: NamedRoutes.FAQ_PAGE,
-        page: FAQ_pages(),
+        page: const FAQ_pages(),
         // bloc: BlocProvider(
         //   create: (_) => HomePageBloc(),
         // ),
       ),
       pageEntity(
         route: NamedRoutes.HELP_PAGE,
-        page: HelpSection(),
+        page: const HelpSection(),
         // bloc: BlocProvider(
         //   create: (_) => HomePageBloc(),
         // ),
       ),
       pageEntity(
         route: NamedRoutes.ABOUT_PAGE,
-        page: AboutPage(),
+        page: const AboutPage(),
         // bloc: BlocProvider(
         //   create: (_) => HomePageBloc(),
         // ),
       ),
       pageEntity(
         route: NamedRoutes.TROUBLESHOOTING_PAGE,
-        page: TroubleshootingSection(),
+        page: const TroubleshootingSection(),
         // bloc: BlocProvider(
         //   create: (_) => HomePageBloc(),
         // ),
       ),
       pageEntity(
         route: NamedRoutes.CONTACT_PAGE,
-        page: ContactSupportSection(),
+        page: const ContactSupportSection(),
         // bloc: BlocProvider(
         //   create: (_) => HomePageBloc(),
         // ),
       ),
       pageEntity(
         route: NamedRoutes.USERMANUAL_PAGE,
-        page: UserManualSection(),
+        page: const UserManualSection(),
         // bloc: BlocProvider(
         //   create: (_) => HomePageBloc(),
         // ),
@@ -215,7 +215,7 @@ class NamedRouteSettings {
         if (route.first.route == NamedRoutes.WELCOCME_PAGE1 && firstStartApp) {
           print('the user already pass the welcome page 4');
           return MaterialPageRoute(
-              builder: (_) => SignInPage(), settings: settings);
+              builder: (_) => const SignInPage(), settings: settings);
         }
         if (route.first.route == NamedRoutes.HOME_PAGE &&
             settings.arguments != null) {

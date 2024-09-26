@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [...NamedRouteSettings.allBlocProviders(context)],
-      child: ScreenUtilInit(
+      child: const ScreenUtilInit(
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           onGenerateRoute: NamedRouteSettings.GenerateRouteSettings,

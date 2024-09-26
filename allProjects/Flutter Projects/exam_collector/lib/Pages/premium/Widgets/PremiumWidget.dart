@@ -18,7 +18,7 @@ Widget CheckBoxAndText({required String text}) {
           color: ColorCollections.SecondaryColor,
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Center(
+        child: const Center(
           child: Icon(
             Icons.check,
             size: 15,
@@ -52,7 +52,7 @@ Widget pageViews({
         height: 400,
         width: 200,
         decoration: BoxDecoration(
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: ColorCollections.TeritiaryColor,
               spreadRadius: 2,
@@ -87,7 +87,7 @@ Widget pageViews({
                     TextColor: ColorCollections.SecondaryColor,
                     TextFontWeight: FontWeight.w400,
                   ),
-                  Icon(
+                  const Icon(
                     Icons.toggle_on_outlined,
                     size: 40,
                     color: ColorCollections.SecondaryColor,
@@ -126,15 +126,15 @@ Widget pageViews({
               ],
             ),
             Container(
-              margin: EdgeInsets.only(left: 30, top: 15),
+              margin: const EdgeInsets.only(left: 30, top: 15),
               child: CheckBoxAndText(text: feature1),
             ),
             Container(
-              margin: EdgeInsets.only(left: 30, top: 0),
+              margin: const EdgeInsets.only(left: 30, top: 0),
               child: CheckBoxAndText(text: feature2),
             ),
             Container(
-              margin: EdgeInsets.only(left: 30, top: 0),
+              margin: const EdgeInsets.only(left: 30, top: 0),
               child: CheckBoxAndText(text: feature3),
             ),
             GestureDetector(
@@ -145,13 +145,30 @@ Widget pageViews({
                   final userSignInDetails = context.read<SignInBloc>().state;
                   String userEmail = userSignInDetails.email;
                   //first got the user data and
-                  Future.delayed(Duration(seconds: 5));
+                  Future.delayed(const Duration(seconds: 5));
                   Map<String, dynamic> alpha =
                       await Getuserdetails(email: userEmail).userMap();
+                  if(alpha == Null){
+                    print(alpha);
+                    Navigator.of(context)
+                        .pushNamed('/home_page', arguments: alpha);
+                  }else{
+                    print(alpha);
+                    Navigator.of(context)
+                        .pushNamed('/home_page', arguments: {
+                            'userName':"yared",
+                            'userEmail':"yared@gmail.com",
+                            'userPassword':"123456",
+                            'userPhone': "099985755",
+                            'userCurrentStatus':"student",
+                            'userEducationLevel':"degree",
+                            'userUniversity':"AASTU",
+                            'userType':"free",
+
+                    });
+                  }
                   // String userName = alpha['userName'];
-                  print(alpha);
-                  Navigator.of(context)
-                      .pushNamed('/home_page', arguments: alpha);
+
                 } else if (SubscriptionType == 'Premium') {
                   //first got the user data and
                   Navigator.of(context).pushNamed('/payment_page');
@@ -167,10 +184,10 @@ Widget pageViews({
               child: Container(
                 height: 30,
                 width: 150,
-                margin: EdgeInsets.only(left: 20, bottom: 20, top: 15),
+                margin: const EdgeInsets.only(left: 20, bottom: 20, top: 15),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     fit: BoxFit.fill,
                     image: AssetImage('assets/Images/ButtonColor.jpg'),
                   ),

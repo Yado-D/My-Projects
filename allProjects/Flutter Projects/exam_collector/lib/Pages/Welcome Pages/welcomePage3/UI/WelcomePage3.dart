@@ -59,7 +59,7 @@ class WelcomePage3 extends StatelessWidget {
                               );
                         },
                         child: Container(
-                          margin: EdgeInsets.only(left: 90, top: 40),
+                          margin: const EdgeInsets.only(left: 90, top: 40),
                           child: AppButton(
                             ButtonHeight: 50,
                             ButtonWidth: 200,
@@ -89,7 +89,7 @@ class WelcomePage3 extends StatelessWidget {
                                   PositionButtonCliked: "bsc"));
                         },
                         child: Container(
-                          margin: EdgeInsets.only(left: 90),
+                          margin: const EdgeInsets.only(left: 90),
                           child: AppButton(
                             ButtonHeight: 50,
                             ButtonWidth: 200,
@@ -117,7 +117,7 @@ class WelcomePage3 extends StatelessWidget {
                                   PositionButtonCliked: 'masters'));
                         },
                         child: Container(
-                          margin: EdgeInsets.only(left: 90),
+                          margin: const EdgeInsets.only(left: 90),
                           child: AppButton(
                             ButtonHeight: 50,
                             ButtonWidth: 200,
@@ -147,7 +147,7 @@ class WelcomePage3 extends StatelessWidget {
                                   PositionButtonCliked: "phd"));
                         },
                         child: Container(
-                          margin: EdgeInsets.only(left: 90),
+                          margin: const EdgeInsets.only(left: 90),
                           child: AppButton(
                             ButtonHeight: 50,
                             ButtonWidth: 200,
@@ -175,7 +175,7 @@ class WelcomePage3 extends StatelessWidget {
                                   PositionButtonCliked: "none"));
                         },
                         child: Container(
-                          margin: EdgeInsets.only(left: 90),
+                          margin: const EdgeInsets.only(left: 90),
                           child: AppButton(
                             ButtonHeight: 50,
                             ButtonWidth: 200,
@@ -218,10 +218,10 @@ class WelcomePage3 extends StatelessWidget {
                   child: Container(
                     height: 40,
                     width: 150,
-                    margin: EdgeInsets.only(left: 20, bottom: 40),
+                    margin: const EdgeInsets.only(left: 20, bottom: 40),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         fit: BoxFit.fill,
                         image: AssetImage('assets/Images/ButtonColor.jpg'),
                       ),

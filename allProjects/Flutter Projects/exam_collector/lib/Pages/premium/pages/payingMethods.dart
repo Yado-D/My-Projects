@@ -18,7 +18,7 @@ class PaymentMethods extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
         ),
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           top: 60,
         ),
         child: CarouselSlider.builder(
@@ -68,7 +68,7 @@ class PaymentMethods extends StatelessWidget {
     return ListView(
       children: [
         Container(
-          margin: EdgeInsets.only(left: 10),
+          margin: const EdgeInsets.only(left: 10),
           child: Column(
             children: [
               Container(
@@ -78,11 +78,11 @@ class PaymentMethods extends StatelessWidget {
                   border: Border.all(color: Colors.grey.shade300),
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(2, 2),
+                      offset: const Offset(2, 2),
                       color: Colors.grey.shade200,
                     )
                   ],
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20),
                   ),
@@ -95,7 +95,7 @@ class PaymentMethods extends StatelessWidget {
               Container(
                 height: 250,
                 width: 200,
-                margin: EdgeInsets.only(top: 30),
+                margin: const EdgeInsets.only(top: 30),
                 decoration: BoxDecoration(
                   color: ColorCollections.GreyColor,
                   borderRadius: BorderRadius.circular(20),
