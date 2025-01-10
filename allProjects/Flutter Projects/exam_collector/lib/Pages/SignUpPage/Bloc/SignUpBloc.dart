@@ -9,6 +9,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     on<EmailEvent>(emailEvent);
     on<PasswordEvent>(passwordEvent);
     on<NameEvent>(nameEvent);
+    on<PhoneEvent>(phoneEvent);
   }
   FutureOr<void> emailEvent(
     EmailEvent event,
@@ -39,10 +40,10 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   }
 
   FutureOr<void> phoneEvent(
-    NameEvent event,
+    PhoneEvent event,
     Emitter emit,
   ) async {
-    emit(state.copyWith(name: event.Name));
+    emit(state.copyWith(phoneNumber: event.phoneNumber));
     print(state.name);
     print(state.email);
     print(state.password);

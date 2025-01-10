@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="../CSS/home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <link rel="stylesheet" href="../CSS/sellItems.css" />
+  <link rel="stylesheet" href="../CSS/services.css" />
+  <link rel="stylesheet" href="../CSS/trustedCompanys.css" />
+  <link href="../CSS/footer.css" rel="stylesheet" />
+
+
+  <style>
+    .trustedItems {
+      width: 100%;
+    }
+  </style>
+
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a class="company-name">GOLDEN AUCTION </a>
+        <div class="navbar-links">
+          <a href="#" class="navbar-link">Contact us</a>
+          <a href="#" class="navbar-link">About us</a>
+          <button class="navbar-link" id="navbar-signin-button">Sign In</button>
+        </div>
+      </div>
+    </nav>
+    <main>
+
+      <!--starting of Home-page-->
+
+      <section class="Home-page">
+        <div class="header-txt">
+          <h1 class="header-note">
+            <p>Discover Incredible Deals</p>
+            <p>at Our Live Auction!</p>
+            <p>Bid Now and Claim</p>
+            <p>Your Treasure!</p>
+          </h1>
+          <div>
+            <button class="home-buttons">Sign In</button>
+            <button class="home-buttons" style="background-color: #ffb606">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!--end  of home Home-page-->
+
+      <!--starting of selling Items-->
+
+      <section>
+        <div class="sellItems-title">
+          <h2>
+            <p>BUY YOUR DREAM SPORTS CAR NOW!</p>
+          </h2>
+        </div>
+
+        <section class="product-row">
+          <section>
+            <div class="img-cont1">
+              <img src="../assets/images/Car1.png" alt="Product 1" />
+            </div>
+
+            <div class="txt-cont">
+              <div>
+                <p class="txt"><strong>Brand : </strong>Bugatti Chiron</p>
+                <p class="txt"><strong>Type : </strong>Sport Car</p>
+                <p class="txt"><strong>Last Bidder Price : </strong>4.5 million</p>
+                <p class="txt"><strong>Location : </strong>Addis Ababa</p>
+                <p class="txt"><strong>Deadline : </strong>5 days left</p>
+              </div>
+
+              <div>
+                <button class="status-button">Live Now!</button>
+              </div>
+            </div>
+
+            <fieldset class="bid-fieldset">
+              <legend>Place Your Bid</legend>
+              <label for="bid-amount-1">Bid Amount:</label>
+              <input
+                type="number"
+                id="bid-amount-1"
+                name="bid-amount-1"
+                min="1"
+                step="0.01"
+              />
+              <button
+                type="submit"
+                class="bid-button"
+                onclick="clearFieldset('bid-amount-1')"
+              >
+                Submit Bid
+              </button>
+            </fieldset>
+          </section>
+
+          <section>
+            <div class="img-cont1">
+              <img src="../assets/images/Car2.jpg" alt="Product 2" />
+            </div>
+
+            <div class="txt-cont">
+              <div>
+                <p class="txt"><strong>Brand : </strong>Bugatti Chiron</p>
+                <p class="txt"><strong>Type : </strong>Sport Car</p>
+                <p class="txt"><strong>Last Bidder Price : </strong>4 million</p>
+                <p class="txt"><strong>Location : </strong>Addis Ababa</p>
+                <p class="txt"><strong>Deadline : </strong>4 days left</p>
+              </div>
+              <div>
+                <button class="status-button">Live Now!</button>
+              </div>
+            </div>
+
+            <fieldset class="bid-fieldset">
+              <legend>Place Your Bid</legend>
+              <label for="bid-amount-2">Bid Amount:</label>
+              <input
+                type="number"
+                id="bid-amount-2"
+                name="bid-amount-2"
+                min="1"
+                step="0.01"
+              />
+              <button
+                type="submit"
+                class="bid-button"
+                onclick="clearFieldset('bid-amount-2')"
+              >
+                Submit Bid
+              </button>
+            </fieldset>
+          </section>
+
+          <section>
+            <div class="img-cont1">
+              <img src="../assets/images/Car3.jpg" alt="Product 3" />
+            </div>
+
+            <div class="txt-cont">
+              <div>
+                <p class="txt"><strong>Brand : </strong>Bugatti Chiron</p>
+                <p class="txt"><strong>Type : </strong>Sport Car</p>
+                <p class="txt"><strong>Last Bidder Price : </strong>5 million</p>
+                <p class="txt"><strong>Location : </strong>Addis Ababa</p>
+                <p class="txt"><strong>Deadline : </strong>6 days left</p>
+              </div>
+              <div>
+                <button class="status-button">Live Now!</button>
+              </div>
+            </div>
+
+            <fieldset class="bid-fieldset">
+              <legend>Place Your Bid</legend>
+              <label for="bid-amount-3">Bid Amount:</label>
+              <input
+                type="number"
+                id="bid-amount-3"
+                name="bid-amount-3"
+                min="1"
+                step="0.01"
+              />
+              <button
+                type="submit"
+                class="bid-button"
+                onclick="clearFieldset('bid-amount-3')"
+              >
+                Submit Bid
+              </button>
+            </fieldset>
+          </section>
+
+          <section>
+            <div class="img-cont1">
+              <img src="../assets/images/Car4.jpg" alt="Product 4" />
+            </div>
+
+            <div class="txt-cont">
+              <div>
+                <p class="txt"><strong>Brand : </strong>Bugatti Chiron</p>
+                <p class="txt"><strong>Type : </strong>Sport Car</p>
+                <p class="txt"><strong>Last Bidder Price : </strong>5.5 million</p>
+                <p class="txt"><strong>Location : </strong>Addis Ababa</p>
+                <p class="txt"><strong>Deadline : </strong>23 hours left</p>
+              </div>
+              <div>
+                <button class="status-button">Live Now!</button>
+              </div>
+            </div>
+
+            <fieldset class="bid-fieldset">
+              <legend>Place Your Bid</legend>
+              <label for="bid-amount-4">Bid Amount:</label>
+              <input
+                type="number"
+                id="bid-amount-4"
+                name="bid-amount-4"
+                min="1"
+                step="0.01"
+              />
+              <button
+                type="submit"
+                class="bid-button"
+                onclick="clearFieldset('bid-amount-4')"
+              >
+                Submit Bid
+              </button>
+            </fieldset>
+          </section>
+
+          <section>
+            <div class="img-cont1">
+              <img src="../assets/images/Car5.jpg" alt="Product 5" />
+            </div>
+
+            <div class="txt-cont">
+              <div>
+                <p class="txt"><strong>Brand : </strong>Bugatti Chiron</p>
+                <p class="txt"><strong>Type : </strong>Sport Car</p>
+                <p class="txt"><strong>Last Bidder Price : </strong>4 million</p>
+                <p class="txt"><strong>Location : </strong>Addis Ababa</p>
+                <p class="txt"><strong>Deadline : </strong>1 week left</p>
+              </div>
+              <div>
+                <button class="status-button">Live Now!</button>
+              </div>
+            </div>
+
+            <fieldset class="bid-fieldset">
+              <legend>Place Your Bid</legend>
+              <label for="bid-amount-5">Bid Amount:</label>
+              <input
+                type="number"
+                id="bid-amount-5"
+                name="bid-amount-5"
+                min="1"
+                step="0.01"
+              />
+              <button
+                type="submit"
+                class="bid-button"
+                onclick="clearFieldset('bid-amount-5')"
+              >
+                Submit Bid
+              </button>
+            </fieldset>
+          </section>
+        </section>
+      </section>
+
+      <!--ending of selling Items-->
+
+      <!--starting of our services-->
+
+      <section>
+        <div class="servicesItems-title">
+          <h2>
+            <p>Our Services</p>
+          </h2>
+        </div>
+    
+        <div class="outer-services-cont">
+          <div>
+            <p>Services We Provide</p>
+          </div>
+    
+          <div class="outer-nested-cont">
+            <div class="service-cont">We Aim Decrease Corruption</div>
+            <div class="service-cont">We Aim Decrease Corruption</div>
+            <div class="service-cont">We Aim Decrease Corruption</div>
+          </div>
+        </div>
+      </section>
+
+      <!--end of our services-->
+     
+      <!--started of trusted trustedCompanys-->
+
+       <section>
+        <div class="sellItems-title">
+          <h2>
+            <p>Trusted by the Best</p>
+          </h2>
+        </div>
+    
+        <section class="company-row">
+          <section>
+            <div class="img-cont1">
+              <img
+                src="../assets/images/Ethiopian-Investment-Commission.jpg"
+                alt="Company Logo"
+              />
+            </div>
+    
+            <div class="txt-cont">
+              <p>Ethiopian Investment Commission</p>
+            </div>
+          </section>
+    
+          <section>
+            <div class="img-cont1">
+              <img src="../assets/images/Ethio-telecom.jpg" alt="Company Logo" />
+            </div>
+    
+            <div class="txt-cont">
+              <p>Ethio telecom</p>
+            </div>
+          </section>
+    
+          <section>
+            <div class="img-cont1">
+              <img src="../assets/images/Commercial-Bank.jpg" alt="Company Logo" />
+            </div>
+    
+            <div class="txt-cont">
+              <p>Commercial Bank of Ethiopia</p>
+            </div>
+          </section>
+        </section>
+       </section>
+      
+       <!--end of trusted trustedCompanys-->
+
+
+
+       <!--start of footer-->
+       
+       
+        <section>
+          <h1>Give us your valuable feedback</h1>
+          <div class="container">
+            <h2>Your answer</h2>
+            <textarea placeholder="Write your comment here"></textarea>
+            <button type="submit">Submit</button>
+          </div>
+      
+          <footer class="footer">
+            <div class="footer-company-name">
+              <h2>Golden Auction</h2>
+            </div>
+      
+            <div class="footer-redirect">
+              <h2 class="service-title">Services</h2>
+              <p>Support</p>
+              <p>Bid Process</p>
+              <p>Services</p>
+              <br />
+      
+              <p>© 2024 Golden Auction. All rights reserved.</p>
+              <p>Terms of Service | Privacy Policy</p>
+            </div>
+      
+            <div class="socials">
+              <h2>Social Media</h2>
+              <a
+                href="https://fontawesome.com/icons/telegram?f=brands&s=solid"
+                target="_blank"
+                class="icon"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </footer>
+        </section>
+
+
+       <!--end of footer-->
+    </main>
+  </body>
+</html>

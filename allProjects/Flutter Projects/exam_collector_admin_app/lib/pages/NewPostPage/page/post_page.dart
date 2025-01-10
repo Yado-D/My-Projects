@@ -8,25 +8,20 @@ class new_post extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: SimpleAppBars(context, true, 'Which Post?'),
       backgroundColor: ColorCollections.PrimaryColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ReusableText(
-            FromLeft: 140,
-            TextColor: ColorCollections.SecondaryColor,
-            TextFontWeight: FontWeight.w900,
-            TextString: 'Which Post  ?',
-            FontSize: 48,
-          ),
+
           postWidget(
-            text: 'Carousel Slider Image',
+            text: 'Carousel Slider',
             ontap: () {
               Navigator.of(context).pushNamed('/carousel_page');
             },
           ),
           postWidget(
-            text: 'SliverGrid View Image',
+            text: 'SliverGrid View ',
             ontap: () {
               Navigator.of(context).pushNamed('/sliver_grid_page');
             },
@@ -50,21 +45,23 @@ class new_post extends StatelessWidget {
     required String text,
     required void Function() ontap,
   }) {
-    return InkWell(
-      onTap: ontap,
-      child: Container(
-        height: 70,
-        width: 250,
-        margin: EdgeInsets.only(top: 30),
-        decoration: BoxDecoration(
-          color: ColorCollections.WhiteColor,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Center(
-          child: ReusableText(
-            TextColor: ColorCollections.SecondaryColor,
-            TextString: text,
-            FontSize: 30,
+    return Center(
+      child: InkWell(
+        onTap: ontap,
+        child: Container(
+          height: 50,
+          width: 250,
+          margin: EdgeInsets.only(top: 30),
+          decoration: BoxDecoration(
+            color: ColorCollections.WhiteColor,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Center(
+            child: ReusableText(
+              TextColor: ColorCollections.SecondaryColor,
+              TextString: text,
+              FontSize: 25,
+            ),
           ),
         ),
       ),

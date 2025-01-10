@@ -9,52 +9,67 @@ class PaymentMethods extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: ColorCollections.PrimaryColor,
-      ),
-      backgroundColor: ColorCollections.PrimaryColor,
-      body: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-        ),
-        margin: const EdgeInsets.only(
-          top: 60,
-        ),
-        child: CarouselSlider.builder(
-          itemCount: AccountInformation().length,
-          options: CarouselOptions(
-            viewportFraction: 0.66,
-            autoPlay: true,
-            enlargeCenterPage: true,
-            // aspectRatio: 19 / 6,
-            enlargeStrategy: CenterPageEnlargeStrategy.height,
-            height: 560,
-          ),
-          // carouselController: ,
-          itemBuilder: (context, index, realIndex) {
-            return InkWell(
-              onTap: () {
-                if (index == 0) {
-                  //impliment navigation to the screenshot send screen
-                  Navigator.of(context).pushNamed('/sendscreenshot_page');
-                } else if (index == 1) {
-                  //go to
-                  Navigator.of(context).pushNamed('/sendscreenshot_page');
-                } else if (index == 2) {
-                  //navigate
-                  Navigator.of(context).pushNamed('/sendscreenshot_page');
-                } else {
-                  print('error');
-                }
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          leading: Container(
+            margin: EdgeInsets.all(15),
+            child: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
               },
-              child: paymentContainer(
-                assetText: AccountInformation()[index]['bankImage'],
-                AccountNu: AccountInformation()[index]['AccountNumber'],
-                Name: AccountInformation()[index]['Name'],
+              icon: Icon(
+                Icons.arrow_back_ios,
+                size: 35,
               ),
-            );
-          },
+            ),
+          ),
+          backgroundColor: ColorCollections.PrimaryColor,
+        ),
+        backgroundColor: ColorCollections.PrimaryColor,
+        body: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          margin: const EdgeInsets.only(
+            top: 60,
+          ),
+          child: CarouselSlider.builder(
+            itemCount: AccountInformation().length,
+            options: CarouselOptions(
+              viewportFraction: 0.66,
+              autoPlay: true,
+              enlargeCenterPage: true,
+              // aspectRatio: 19 / 6,
+              enlargeStrategy: CenterPageEnlargeStrategy.height,
+              height: 560,
+            ),
+            // carouselController: ,
+            itemBuilder: (context, index, realIndex) {
+              return InkWell(
+                onTap: () {
+                  if (index == 0) {
+                    //impliment navigation to the screenshot send screen
+                    Navigator.of(context).pushNamed('/sendscreenshot_page');
+                  } else if (index == 1) {
+                    //go to
+                    Navigator.of(context).pushNamed('/sendscreenshot_page');
+                  } else if (index == 2) {
+                    //navigate
+                    Navigator.of(context).pushNamed('/sendscreenshot_page');
+                  } else {
+                    print('error');
+                  }
+                },
+                child: paymentContainer(
+                  assetText: AccountInformation()[index]['bankImage'],
+                  AccountNu: AccountInformation()[index]['AccountNumber'],
+                  Name: AccountInformation()[index]['Name'],
+                ),
+              );
+            },
+          ),
         ),
       ),
     );

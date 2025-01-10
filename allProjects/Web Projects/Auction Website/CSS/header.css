@@ -1,0 +1,50 @@
+/* Reset styles for the header */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100%; /* Full height of the header iframe */
+}
+
+.header-style {
+    margin: 0;
+    width: 100%; /* Full width */
+}
+
+
+.company-name {
+    margin-left: 10px;
+    color: gold;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between; /* Space out elements */
+    align-items: center; /* Vertically align */
+    width: 100%;
+}
+
+.header-nested-row {
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-txt {
+    font-size: 15px;
+    margin-right: 20px;
+    color: white;
+}
+
+.header-signin-button {
+    background-color: rgb(130, 129, 129);
+    color: gold;
+    height: 30px;
+    border-radius: 5px;
+}

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../../utils/AppColorCollections.dart';
 import '../../../../widgets/AllCommonWidget.dart';
@@ -10,57 +11,44 @@ class Welcomepage4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          const FullPageContainer(),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 88,
-                child: ReusableText(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarBrightness: Brightness.dark,
+          ),
+        ),
+        backgroundColor: ColorCollections.PageColor,
+        body: Stack(
+          children: [
+            // const FullPageContainer(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ReusableText(
                   FromTop: 30,
                   FromLeft: 30,
                   TextString: 'Please Choose',
-                  FontSize: 48,
+                  FontSize: 40,
                   FromBottom: 0,
                   TextFontWeight: FontWeight.bold,
                   TextColor: ColorCollections.SecondaryColor,
                 ),
-              ),
-              SizedBox(
-                height: 67,
-                child: ReusableText(
+                ReusableText(
                   FromLeft: 30,
                   FromTop: 0,
                   TextString: 'Your University ?',
-                  FontSize: 48,
+                  FontSize: 40,
                   TextColor: ColorCollections.SecondaryColor,
                 ),
-              ),
-              DropDownButton(context, 90),
-            ],
-          ),
-          Positioned(
-            bottom: 1,
-            child: Column(
-              children: [
-                ReusableText(
-                  FromLeft: 50,
-                  FromTop: 0,
-                  FromBottom: 80,
-                  TextString: 'Run To The Next',
-                  FontSize: 40,
-                  TextColor: ColorCollections.WhiteColor,
-                ),
+                DropDownButton(context: context, right: 40, left: 40, fromTop: 80),
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).pushNamed('/sign_in_page');
                   },
                   child: Container(
                     height: 40,
-                    width: 150,
-                    margin: const EdgeInsets.only(left: 20, bottom: 40),
+                    // width: 150,
+                    margin: EdgeInsets.only(left: 30,right: 30,top: 350),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       image: const DecorationImage(
@@ -82,9 +70,12 @@ class Welcomepage4 extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ],
-      ),
+
+
+
+          ],
+        ),
+
     );
   }
 }

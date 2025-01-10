@@ -16,8 +16,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [...NamedRouteSettings.allBlocProviders(context)],
-      child: const ScreenUtilInit(
+      child: ScreenUtilInit(
         child: MaterialApp(
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
           debugShowCheckedModeBanner: false,
           onGenerateRoute: NamedRouteSettings.GenerateRouteSettings,
         ),

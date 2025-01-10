@@ -7,4 +7,6 @@ class ColorCollections {
   static Color GreyColor = Colors.grey.shade300;
   static Color WhiteColor = Colors.white;
   static const Color RedColor = Colors.red;
+  static const Color PageColor = Color(0xFFE7F6F2);
+  static const Color TextColor = Color(0xFF003540);
 }

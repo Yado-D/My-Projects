@@ -1,14 +1,29 @@
+import 'package:exam_collector/auth/examFetching.dart';
 import 'package:exam_collector/utils/AppColorCollections.dart';
 import 'package:exam_collector/widgets/AllCommonWidget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class search_page extends StatelessWidget {
+class search_page extends StatefulWidget {
   const search_page({super.key});
 
   @override
+  State<search_page> createState() => _search_pageState();
+}
+
+class _search_pageState extends State<search_page> {
+  Future<List<String>>? courseName;
+  String? searchCourse;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+   courseName =  fetchingExams().getCourseNames();
+  }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor: Color(0xFFE7F6F2),
       body: Container(
         // margin: EdgeInsets.only(),
         child: Column(
@@ -18,7 +33,7 @@ class search_page extends StatelessWidget {
               height: 180,
               width: MediaQuery.of(context).size.width,
               decoration: const BoxDecoration(
-                color: ColorCollections.SecondaryColor,
+                color: Color(0xFF003540),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(
                     30,
@@ -32,14 +47,18 @@ class search_page extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   reusableTextField(
-                    FromTop: 70,
-                    FromLeft: 40,
-                    WidthOfContainer: 250,
-                    widthOfTextField: 200,
+                    FromTop: 70.sp,
+                    FromLeft: 40.sp,
+                    WidthOfContainer: 260.w,
+                    widthOfTextField: 200.w,
                     icon_name: 'search',
                     hintText: 'type course name to search',
                     textType: 'course',
-                    onchange: (value) {},
+                    onchange: (value) {
+                      setState(() {
+                        searchCourse = value;
+                      });
+                    },
                   ),
                 ],
               ),
@@ -50,34 +69,63 @@ class search_page extends StatelessWidget {
               FromTop: 30,
               FromLeft: 30,
               TextFontWeight: FontWeight.w700,
-              TextColor: ColorCollections.SecondaryColor,
+              TextColor: ColorCollections.TextColor ,
             ),
             const SizedBox(
               height: 30,
             ),
-            Row(
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(
-                    left: 40,
-                  ),
-                  height: 30,
-                  width: 30,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/icons/retry.png'),
-                    ),
-                  ),
-                ),
-                ReusableText(
-                  FontSize: 20,
-                  TextString: 'Recent Search',
-                  FromLeft: 30,
-                  TextFontWeight: FontWeight.w700,
-                  TextColor: ColorCollections.SecondaryColor,
-                ),
-              ],
-            ),
+            FutureBuilder(
+                future: courseName,
+                builder: (context,snap){
+               if(snap.connectionState == ConnectionState.waiting){
+                  return Center(child: CircularProgressIndicator(),);
+               }
+              else if(snap.hasError){
+                 return Center(child: ReusableText(TextString: 'Some Error happened. please try again', FontSize: 16),);
+
+               }
+               else if(snap.hasData){
+                 if(searchCourse==null){
+                   return Center(
+                     child: ReusableText(
+                         TextString: "You can Search Courses that available in our app.",
+                         FontSize: 17,
+                         TextColor: ColorCollections.TextColor,
+                     ),
+                   );
+                 }
+                else if(snap.data!.any((test) => test == searchCourse) && searchCourse!=null){
+                   return Container(
+                     margin: EdgeInsets.all(10),
+                     height: 50,
+                     width:MediaQuery.of(context).size.width,
+                     decoration: BoxDecoration(
+                       color: ColorCollections.WhiteColor,
+                       border: Border.all(color: ColorCollections.WhiteColor),
+                     ),
+                     child: ReusableText(
+                         FromLeft: 20,
+                         FromRight: 10,
+                         TextString: searchCourse??"",
+                         FontSize: 18,
+                         TextFontWeight: FontWeight.w500,
+                     ),
+                   );
+                 }else{
+                   return Center(
+                     child: ReusableText(
+                       TextString: "sorry,No course available by \"$searchCourse\" name.",
+                       FontSize: 16),
+                   );
+                 }
+               }
+               return Center(
+                 child: ReusableText(
+                     TextString: "Something Unexpected occured.please try again later",
+                    FontSize: 16),
+               );
+
+            }),
           ],
         ),
       ),

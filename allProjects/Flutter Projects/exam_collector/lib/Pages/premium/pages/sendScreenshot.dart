@@ -7,20 +7,32 @@ class SendScreenShot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          leading: Container(
+            margin: EdgeInsets.only(left: 15),
+            child: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.arrow_back_ios,
+                size: 35,
+              ),
+            ),
+          ),
+          backgroundColor: ColorCollections.PrimaryColor,
+        ),
         backgroundColor: ColorCollections.PrimaryColor,
-      ),
-      backgroundColor: ColorCollections.PrimaryColor,
-      body: Stack(
-        children: [
-          const FullPageContainer(),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 70,
-                child: ReusableText(
+        body: Stack(
+          children: [
+            const FullPageContainer(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ReusableText(
                   FromTop: 10,
                   FromBottom: 0,
                   FromLeft: 25,
@@ -29,71 +41,71 @@ class SendScreenShot extends StatelessWidget {
                   TextColor: ColorCollections.SecondaryColor,
                   TextFontWeight: FontWeight.bold,
                 ),
-              ),
-              Container(
-                child: ReusableText(
-                  FromTop: 0,
-                  FromLeft: 25,
-                  TextString: 'Your Receipt',
-                  FontSize: 48,
-                  TextColor: ColorCollections.SecondaryColor,
-                  TextFontWeight: FontWeight.w500,
+                Container(
+                  child: ReusableText(
+                    FromTop: 0,
+                    FromLeft: 25,
+                    TextString: 'Your Receipt',
+                    FontSize: 48,
+                    TextColor: ColorCollections.SecondaryColor,
+                    TextFontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
-              Center(
+                Center(
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 15),
+                    height: 150,
+                    width: 150,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                          'assets/icons/add_image.png',
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: ReusableText(
+                    TextString: 'Screenshoot or Photo',
+                    FontSize: 20,
+                    TextColor: ColorCollections.SecondaryColor,
+                  ),
+                ),
+              ],
+            ),
+            Positioned(
+              bottom: 1,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamed('/verify_page');
+                },
                 child: Container(
-                  margin: const EdgeInsets.only(top: 15),
-                  height: 150,
+                  height: 40,
                   width: 150,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        'assets/icons/add_image.png',
+                  margin: const EdgeInsets.only(left: 120, bottom: 40),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    image: const DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage('assets/Images/ButtonColor.jpg'),
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Next',
+                      style: TextStyle(
+                        fontSize: 28,
+                        color: ColorCollections.WhiteColor,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                 ),
               ),
-              Center(
-                child: ReusableText(
-                  TextString: 'Screenshoot or Photo',
-                  FontSize: 20,
-                  TextColor: ColorCollections.SecondaryColor,
-                ),
-              ),
-            ],
-          ),
-          Positioned(
-            bottom: 1,
-            child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).pushNamed('/verify_page');
-              },
-              child: Container(
-                height: 40,
-                width: 150,
-                margin: const EdgeInsets.only(left: 120, bottom: 40),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage('assets/Images/ButtonColor.jpg'),
-                  ),
-                ),
-                child: Center(
-                  child: Text(
-                    'Next',
-                    style: TextStyle(
-                      fontSize: 28,
-                      color: ColorCollections.WhiteColor,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

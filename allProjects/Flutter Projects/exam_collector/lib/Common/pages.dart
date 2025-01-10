@@ -1,4 +1,5 @@
 import 'package:exam_collector/Common/name.dart';
+import 'package:exam_collector/Models/UserModels.dart';
 import 'package:exam_collector/Pages/ExamStartedPage/pages/exam_started_page.dart';
 import 'package:exam_collector/Pages/ExamStarting/pages/examStarting_page.dart';
 import 'package:exam_collector/Pages/HomePage/Drawers_pages/about_page.dart';
@@ -9,6 +10,7 @@ import 'package:exam_collector/Pages/HomePage/pages/HomePage.dart';
 import 'package:exam_collector/Pages/Settings%20page/pages/settingsPage.dart';
 import 'package:exam_collector/Pages/SignInPage/Page/Sign_in_page.dart';
 import 'package:exam_collector/Pages/SignUpPage/Pages/Sign_up_page.dart';
+import 'package:exam_collector/Pages/Welcome%20Pages/WelcomePageOnlyTeacher/teacher_info_bloc.dart';
 import 'package:exam_collector/Pages/Welcome%20Pages/welcomePage1/UI/welcomePage1.dart';
 import 'package:exam_collector/Pages/Welcome%20Pages/welcomePage2/Bloc/welcomePage2Bloc.dart';
 import 'package:exam_collector/Pages/Welcome%20Pages/welcomePage2/UI/WelcomePage2.dart';
@@ -21,6 +23,7 @@ import 'package:exam_collector/Pages/premium/pages/verifyPage.dart';
 import 'package:exam_collector/Pages/resultPage/page/resultPage.dart';
 import 'package:exam_collector/Pages/searchPage/page/search_page.dart';
 import 'package:exam_collector/global.dart';
+import 'package:exam_collector/utils/constants.dart';
 import 'package:exam_collector/widgets/simple_pages/account.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,6 +47,14 @@ class NamedRouteSettings {
         page: const WelcomePage2(),
         bloc: BlocProvider(
           create: (_) => WelcomePage2Bloc(),
+        ),
+      ),
+
+      pageEntity(
+        route: NamedRoutes.WELCOCME_PAGE2,
+        page: const WelcomePage2(),
+        bloc: BlocProvider(
+          create: (_) => TeacherInfoBloc(),
         ),
       ),
       pageEntity(
@@ -89,13 +100,13 @@ class NamedRouteSettings {
           create: (_) => HomePageBloc(),
         ),
       ),
-      pageEntity(
-        route: NamedRoutes.EXAM_STARTING_PAGE,
-        page: exam_starting_page(),
-        // bloc: BlocProvider(
-        //   create: (_) => HomePageBloc(),
-        // ),
-      ),
+      // pageEntity(
+      //   route: NamedRoutes.EXAM_STARTING_PAGE,
+      //   page: exam_starting_page(),
+      //   // bloc: BlocProvider(
+      //   //   create: (_) => HomePageBloc(),
+      //   // ),
+      // ),
       pageEntity(
         route: NamedRoutes.EXAM_STARTED_PAGE,
         page: const exam_started_page(),
@@ -205,17 +216,19 @@ class NamedRouteSettings {
     return blocProviders;
   }
 
-  static MaterialPageRoute GenerateRouteSettings(RouteSettings settings) {
+  static MaterialPageRoute GenerateRouteSettings(RouteSettings settings){
     if (settings.name != null) {
       var route = allPages().where((element) => element.route == settings.name);
       if (route.isNotEmpty) {
         //check if the user is already logged in to dont exaust user
         // by asking loggin again and again
         bool firstStartApp = Global.storageServices.GetDeviceFirstOpen();
-        if (route.first.route == NamedRoutes.WELCOCME_PAGE1 && firstStartApp) {
+        if (route.first.route == NamedRoutes.WELCOCME_PAGE1 && firstStartApp){
           print('the user already pass the welcome page 4');
+          UserModels? alpha =  Global.storageServices.getData(AppConstants.USERDATA);
+          print(alpha!.userEmail);
           return MaterialPageRoute(
-              builder: (_) => const SignInPage(), settings: settings);
+              builder: (_) => home_page() , settings: settings);
         }
         if (route.first.route == NamedRoutes.HOME_PAGE &&
             settings.arguments != null) {
@@ -223,7 +236,7 @@ class NamedRouteSettings {
           if (arg is Map<String, dynamic>?) {
             print('user is  on free type');
             return MaterialPageRoute(
-                builder: (_) => home_page(alpha: arg), settings: settings);
+                builder: (_) => home_page(), settings: settings);
           }
         }
         if (route.first.route == NamedRoutes.ACCOUNT_PAGE &&

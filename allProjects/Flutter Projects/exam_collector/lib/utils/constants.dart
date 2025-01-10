@@ -1,5 +1,8 @@
 class AppConstants {
   static const String STORAGE_DEVICE_OPENED_FIRST = 'YES';
+  static const String USERDATA = 'userData';
+
+
 }
 
 List<Map<String, dynamic>> AccountInformation() {

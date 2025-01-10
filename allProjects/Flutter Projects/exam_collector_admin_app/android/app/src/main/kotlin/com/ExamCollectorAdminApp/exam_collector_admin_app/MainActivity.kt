@@ -1,5 +1,6 @@
-package com.ExamCollectorAdminApp.exam_collector_admin_app
+package com.example.exam_collector
 
 import io.flutter.embedding.android.FlutterActivity
 
-class MainActivity: FlutterActivity()
+class MainActivity: FlutterActivity() {
+}

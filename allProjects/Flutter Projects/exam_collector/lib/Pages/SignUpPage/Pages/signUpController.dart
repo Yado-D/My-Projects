@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:exam_collector/Models/UserModels.dart';
 import 'package:exam_collector/Pages/SignUpPage/Bloc/SignUpBloc.dart';
+import 'package:exam_collector/Pages/Welcome%20Pages/WelcomePageOnlyTeacher/teacher_info_bloc.dart';
 import 'package:exam_collector/global.dart';
 import 'package:exam_collector/utils/constants.dart';
 import 'package:exam_collector/utils/fluttertoast.dart';
@@ -20,6 +21,7 @@ class SignUpController {
   });
   Future<void> handleSignup() async {
     try {
+      final teacherInfo = context.read<TeacherInfoBloc>().state;
       final userUniversitys = context.read<Welcomepage4blocs>().state;
       final userEducationLevels = context.read<Welcomepage3bloc>().state;
       final userCurrentStatus = context.read<WelcomePage2Bloc>().state;
@@ -63,22 +65,46 @@ class SignUpController {
           userUniversity: userUniversity,
           userType: 'premium',
           userCurrentStatus: userCurrentState,
+          userImage: '',
         );
         UserCredential credential =
             await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailAddress,
           password: password,
         );
-        await FirebaseFirestore.instance
-            .collection('Users')
-            .doc(emailAddress)
-            .set(userModels.toMap());
+        print("${userModels!.userName}++++++++++++++++++++++++++");
+         if(userCurrentStatus.textButtonCliked == 'teacher'){
+           await FirebaseFirestore.instance
+               .collection('TeacherInfo')
+               .doc(emailAddress)
+               .set({
+             'userName': userModels!.userName,
+             'userEmail': userModels!.userEmail,
+             'userPassword': userModels!.userPassword,
+             'userEducationLevel': userModels!.userEducationLevel,
+             'userUniversity': userModels!.userUniversity,
+             'userType': userModels!.userType,
+             'userCurrentStatus': userModels!.userCurrentStatus,
+             'userPhone': userModels!.userPhone,
+             "userImage":userModels!.userImage,
+             "biography":teacherInfo.biography,
+             "achievement":teacherInfo.achivment,
+             "badge":0,
+           });
+         }else{
+           await FirebaseFirestore.instance
+               .collection('Users')
+               .doc(emailAddress)
+               .set(userModels.toMap());
+         }
+
         FirebaseAuth.instance.currentUser!.sendEmailVerification();
 
         var user = credential.user;
         if (user != null) {
           Global.storageServices
               .setBool(AppConstants.STORAGE_DEVICE_OPENED_FIRST, true);
+          Global.storageServices.setData(AppConstants.USERDATA, userModels);
           //we got user information
           commonSnackBar(context,
               'Congradulations! for being a member of EXAM COLLECTORS Community.We sent email verification to you please verify your email account and Sign in.');

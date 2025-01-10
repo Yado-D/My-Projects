@@ -8,19 +8,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: SimpleAppBars(context,false,"Admin Page",),
       backgroundColor: ColorCollections.PrimaryColor,
       body: Column(
+
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ReusableText(
-            FromLeft: 70,
-            FromTop: 30,
-            FromBottom: 150,
-            TextColor: ColorCollections.SecondaryColor,
-            TextFontWeight: FontWeight.w900,
-            TextString: 'Admin Page',
-            FontSize: 48,
-          ),
+
           homeContainer(
             text: 'Permissions',
             ontap: () {
@@ -48,25 +42,27 @@ class HomePage extends StatelessWidget {
     required String text,
     required void Function() ontap,
   }) {
-    return GestureDetector(
-      onTap: ontap,
-      child: Container(
-        margin: EdgeInsets.only(
-          left: 120,
-          bottom: 15,
-        ),
-        height: 50,
-        width: 300,
-        decoration: BoxDecoration(
-          border: Border.all(color: ColorCollections.SecondaryColor),
-          color: ColorCollections.WhiteColor,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Center(
-          child: ReusableText(
-            TextColor: ColorCollections.SecondaryColor,
-            TextString: text,
-            FontSize: 24,
+    return Center(
+      child: GestureDetector(
+        onTap: ontap,
+        child: Container(
+          margin: EdgeInsets.only(
+            // left: 120,
+            bottom: 15,
+          ),
+          height: 50,
+          width: 300,
+          decoration: BoxDecoration(
+            border: Border.all(color: ColorCollections.SecondaryColor),
+            color: ColorCollections.WhiteColor,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Center(
+            child: ReusableText(
+              TextColor: ColorCollections.SecondaryColor,
+              TextString: text,
+              FontSize: 24,
+            ),
           ),
         ),
       ),

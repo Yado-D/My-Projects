@@ -11,63 +11,76 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorCollections.PrimaryColor,
-      body: Stack(
-        children: [
-          const FullPageContainer(),
-          Container(
-            margin: const EdgeInsets.only(top: 20, left: 30, right: 30),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ReusableText(
-                  TextString: 'Settings',
-                  FontSize: 55,
-                  FromTop: 20,
-                  FromLeft: 40,
-                  TextFontWeight: FontWeight.w900,
-                  TextColor: ColorCollections.SecondaryColor,
-                ),
-                ReusableText(
-                  TextString: 'Account',
-                  FontSize: 25,
-                  FromTop: 10,
-                  FromLeft: 0,
-                  TextFontWeight: FontWeight.w600,
-                  TextColor: ColorCollections.SecondaryColor,
-                ),
-                settingRowWidget(
-                  ontap: () async {
-                    final state = context.read<SignInBloc>().state;
-                    String emailAddress = state.email;
-                    Map<String, dynamic> alpha =
-                        await Getuserdetails(email: emailAddress).userMap();
-                    Navigator.of(context)
-                        .pushNamed('/account_page', arguments: alpha);
-                  },
-                  iconData: const Icon(Icons.person),
-                  text: 'yared dereje',
-                ),
-                settingRowWidget(
-                  ontap: () {},
-                  iconData: const Icon(Icons.lock_open_outlined),
-                  text: 'Password',
-                ),
-                settingRowWidget(
-                  ontap: () {},
-                  iconData: const Icon(Icons.notifications_active),
-                  text: 'Notification',
-                ),
-                settingRowWidget(
-                  ontap: () {},
-                  iconData: const Icon(Icons.help),
-                  text: 'Help',
-                ),
-              ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: ColorCollections.PageColor,
+        appBar: AppBar(
+          backgroundColor: ColorCollections.PageColor,
+          leading: Container(
+            margin: EdgeInsets.all(15),
+            child: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.arrow_back_ios,
+                size: 30,
+              ),
             ),
           ),
-        ],
+          title: ReusableText(
+            TextString: 'Settings',
+            FontSize: 20,
+            FromTop: 24,
+            FromLeft: 20,
+            TextFontWeight: FontWeight.w900,
+            TextColor: ColorCollections.SecondaryColor,
+          ),
+        ),
+        body: Stack(
+          children: [
+            // const FullPageContainer(),
+            Container(
+              margin: const EdgeInsets.only(top: 20, left: 30, right: 30),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+
+                  ReusableText(
+                    TextString: 'Account',
+                    FontSize: 25,
+                    FromTop: 10,
+                    FromLeft: 0,
+                    TextFontWeight: FontWeight.w600,
+                    TextColor: ColorCollections.SecondaryColor,
+                  ),
+                  settingRowWidget(
+                    ontap: () async {
+                      final state = context.read<SignInBloc>().state;
+                      String emailAddress = state.email;
+                      Map<String, dynamic> alpha =
+                          await Getuserdetails(email: emailAddress).userMap();
+                      Navigator.of(context)
+                          .pushNamed('/account_page', arguments: alpha);
+                    },
+                    iconData: const Icon(Icons.person,color: ColorCollections.TextColor,),
+                    text: 'Edit my Account',
+                  ),
+                  settingRowWidget(
+                    ontap: () {},
+                    iconData: const Icon(Icons.notifications_active,color: ColorCollections.TextColor,),
+                    text: 'Notification',
+                  ),
+                  settingRowWidget(
+                    ontap: () {},
+                    iconData: const Icon(Icons.help,color: ColorCollections.TextColor,),
+                    text: 'Help',
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -87,7 +100,7 @@ class SettingsPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           CircleAvatar(
-            // backgroundColor: ColorCollections.WhiteColor,
+            backgroundColor: Colors.transparent,
             radius: 25,
             child: iconData,
           ),
@@ -103,7 +116,7 @@ class SettingsPage extends StatelessWidget {
               height: 30,
               width: 50,
               decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
+                  // color: Colors.grey.shade300,
                   borderRadius: BorderRadius.circular(10)),
               child: const Icon(Icons.arrow_forward_ios),
             ),

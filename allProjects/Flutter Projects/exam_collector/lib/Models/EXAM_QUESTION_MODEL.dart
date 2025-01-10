@@ -28,12 +28,13 @@ class EXAM_QUESTION_MODEL extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin: const EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 10),
+          margin:
+              const EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 10),
           child: ReusableText(
             TextString: EXAM_QUESTION,
             FontSize: 18,
             TextFontWeight: FontWeight.w700,
-            TextColor: ColorCollections.SecondaryColor,
+            TextColor: ColorCollections.WhiteColor,
           ),
         ),
         ExamQuestionText(
@@ -121,7 +122,7 @@ class EXAM_QUESTION_MODEL extends StatelessWidget {
               TextString: examchoice,
               FontSize: 18,
               TextFontWeight: FontWeight.w700,
-              TextColor: ColorCollections.SecondaryColor,
+              TextColor: ColorCollections.WhiteColor,
             ),
           ),
           CheckAnswers(checkIconName: checkIconName),

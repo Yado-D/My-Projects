@@ -7,23 +7,39 @@ import '../Bloc/WelcomePage4BlocEvent.dart';
 
 //Drop down button
 
-Widget DropDownButton(BuildContext context, double fromTop) {
+Widget DropDownButton(
+    {required BuildContext context,
+    required double fromTop,
+    required double left,
+    required double right}) {
   return Container(
-    color: ColorCollections.WhiteColor,
-    margin: EdgeInsets.only(top: fromTop, left: 70),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(12),
+      border: Border.all(
+        color: Color(0xFF003540), // Customize border color
+        width: 1.5,
+      ),
+    ),
+    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+    // color: ColorCollections.WhiteColor,
+    margin: EdgeInsets.only(top: fromTop, left: left, right: right),
     child: DropdownMenu(
-      width: 220,
+      width: MediaQuery.of(context).size.width,
       initialSelection: 'None',
       menuStyle: MenuStyle(
-          backgroundColor:
-              WidgetStateProperty.all(ColorCollections.WhiteColor)),
+        backgroundColor: WidgetStateProperty.all(ColorCollections.WhiteColor),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        elevation: MaterialStateProperty.all(5),
+        shadowColor: MaterialStateProperty.all(Colors.grey.shade300),
+      ),
       onSelected: (value) {
-        context
-            .read<Welcomepage4blocs>()
-            .add(Welcomepage4blocEvent(SelectedItem: value!));
-        // print();
+        context.read<Welcomepage4blocs>().add(Welcomepage4blocEvent(SelectedItem: value!));
       },
-      dropdownMenuEntries: const [
+      dropdownMenuEntries: [
         DropdownMenuEntry(
           value: 'AASTU',
           label: 'AASTU',
@@ -57,7 +73,7 @@ Widget DropDownButton(BuildContext context, double fromTop) {
           label: 'Gima',
         ),
         DropdownMenuEntry(
-          value: 'value9',
+          value: 'Weldya',
           label: 'Weldya',
         ),
         DropdownMenuEntry(
@@ -73,6 +89,7 @@ Widget DropDownButton(BuildContext context, double fromTop) {
           label: 'None',
         ),
       ],
+
     ),
   );
 }

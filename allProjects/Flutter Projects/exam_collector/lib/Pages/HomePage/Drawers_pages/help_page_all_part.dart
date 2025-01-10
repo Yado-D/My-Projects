@@ -1,4 +1,6 @@
+import 'package:exam_collector/Pages/HomePage/Drawers_pages/faq.dart';
 import 'package:exam_collector/utils/AppColorCollections.dart';
+import 'package:exam_collector/widgets/AllCommonWidget.dart';
 import 'package:flutter/material.dart';
 
 class FaqSection extends StatelessWidget {
@@ -7,14 +9,13 @@ class FaqSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorCollections.PrimaryColor,
+      backgroundColor: ColorCollections.PageColor,
       appBar: AppBar(
-        backgroundColor: ColorCollections.PrimaryColor,
-        title: const Center(
-            child: Text(
+        backgroundColor: ColorCollections.PageColor,
+        title:  Text(
           'FAQs',
           style: TextStyle(fontWeight: FontWeight.bold),
-        )),
+        ),
       ),
       body: const SafeArea(
         child: SingleChildScrollView(
@@ -67,7 +68,8 @@ class FaqItem extends StatelessWidget {
                 Color.fromARGB(255, 214, 90, 236), // Customize the text color
           ),
         ),
-        tilePadding: const EdgeInsets.all(16.0), // Adjust tile padding as needed
+        tilePadding:
+            const EdgeInsets.all(16.0), // Adjust tile padding as needed
         collapsedTextColor: Colors.blue, // Customize collapsed text color
         iconColor: Colors.blue, // Customize the icon color
         backgroundColor: Colors.grey[200],
@@ -94,7 +96,9 @@ class TutorialsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorCollections.PageColor,
       appBar: AppBar(
+        backgroundColor: ColorCollections.PageColor,
         title: const Text('Tutorials'),
       ),
       body: SafeArea(
@@ -114,29 +118,42 @@ class TutorialsSection extends StatelessWidget {
                     ),
                     width: 350,
                     height: 300,
-                    color: const Color.fromARGB(255, 255, 255, 255),
-                    child: const Column(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    child:  Column(
                       mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'How to Use Feature X:',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ReusableText(
+                          FromTop: 15,
+                          TextString: "How to Use Exam Collectors App?",
+                          FontSize: 18,
+                          TextFontWeight: FontWeight.w700,
+                          TextColor: Colors.black87,
                         ),
                         SizedBox(height: 8),
-                        Text(
-                          '1. Open the app and navigate to the Home screen.',
-                          style: TextStyle(fontSize: 16),
+                        ReusableText(
+                          FromTop: 15,
+                          TextString: "1. Open the app and navigate to the Home screen.",
+                          FontSize: 16,
+                          TextFontWeight: FontWeight.w400,
+                          TextColor: Colors.black87,
                         ),
-                        SizedBox(height: 8),
-                        Text(
-                          '2. Tap on the "Feature X" icon.',
-                          style: TextStyle(fontSize: 16),
+
+
+                        ReusableText(
+                          FromTop: 5,
+                          TextString: "2. Tap on the Exam icon at the Bottom.",
+                          FontSize: 16,
+                          TextFontWeight: FontWeight.w400,
+                          TextColor: Colors.black87,
                         ),
-                        SizedBox(height: 8),
-                        Text(
-                          '3. Follow the on-screen instructions to complete the process.',
-                          style: TextStyle(fontSize: 16),
+
+                        ReusableText(
+                          FromTop: 5,
+                          TextString: "3. Insert the on-screen instructions to complete the process.",
+                          FontSize: 16,
+                          TextFontWeight: FontWeight.w400,
+                          TextColor: Colors.black87,
                         ),
                       ],
                     ),
@@ -158,74 +175,46 @@ class TutorialsSection extends StatelessWidget {
                     ),
                     width: 350,
                     height: 300,
-                    color: const Color.fromARGB(255, 255, 255, 255),
-                    child: const Column(
+                    color:  Color.fromARGB(255, 255, 255, 255),
+                    child:  Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Troubleshooting Guide:',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 8),
-                        Text(
-                          'If you encounter any issues with Feature X, follow these steps:',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        Text(
-                          '1. Close and reopen the app.',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        Text(
-                          '2. Check your internet connection.',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        Text(
-                          '3. Contact support if the problem persists.',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ],
-                    ),
-                  ),
-                )),
-              ),
 
-              const SizedBox(height: 16),
+                        ReusableText(
+                          FromTop: 15,
+                          TextString: "Troubleshooting Guide",
+                          FontSize: 18,
+                          TextFontWeight: FontWeight.w700,
+                          TextColor: Colors.black87,
+                        ),
 
-              Center(
-                child: Card(
-                    child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Container(
-                    padding: const EdgeInsets.only(
-                      left: 16,
-                      right: 16,
-                    ),
-                    width: 350,
-                    height: 300,
-                    color: const Color.fromARGB(255, 255, 255, 255),
-                    child: const Column(
-                      children: [
-                        Text(
-                          'Troubleshooting Guide:',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ReusableText(
+                          FromTop: 5,
+                          TextString: "If you encounter any issues with Feature X, follow these steps:",
+                          FontSize: 16,
+                          TextFontWeight: FontWeight.w400,
+                          TextColor: Colors.black87,
                         ),
-                        SizedBox(height: 8),
-                        Text(
-                          'If you encounter any issues with Feature X, follow these steps:',
-                          style: TextStyle(fontSize: 16),
+                        ReusableText(
+                          FromTop: 5,
+                          TextString: "1. Close and reopen the app.",
+                          FontSize: 16,
+                          TextFontWeight: FontWeight.w400,
+                          TextColor: Colors.black87,
                         ),
-                        Text(
-                          '1. Close and reopen the app.',
-                          style: TextStyle(fontSize: 16),
+                        ReusableText(
+                          FromTop: 5,
+                          TextString: "2. Check your internet connection.",
+                          FontSize: 16,
+                          TextFontWeight: FontWeight.w400,
+                          TextColor: Colors.black87,
                         ),
-                        Text(
-                          '2. Check your internet connection.',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        Text(
-                          '3. Contact support if the problem persists.',
-                          style: TextStyle(fontSize: 16),
+                        ReusableText(
+                          FromTop: 5,
+                          TextString: "3. Contact support if the problem persists.",
+                          FontSize: 16,
+                          TextFontWeight: FontWeight.w400,
+                          TextColor: Colors.black87,
                         ),
                       ],
                     ),
@@ -246,9 +235,9 @@ class TroubleshootingSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorCollections.PrimaryColor,
+      backgroundColor: ColorCollections.PageColor,
       appBar: AppBar(
-        backgroundColor: ColorCollections.PrimaryColor,
+        backgroundColor: ColorCollections.PageColor,
         title: const Text('Troubleshooting Tips'),
       ),
       body: SafeArea(
@@ -362,10 +351,16 @@ class ContactSupportSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorCollections.PrimaryColor,
+      backgroundColor: ColorCollections.PageColor,
       appBar: AppBar(
-        backgroundColor: ColorCollections.PrimaryColor,
-        title: const Center(child: Text('Contact Support')),
+        backgroundColor: ColorCollections.PageColor,
+        title: Center(child:  ReusableText(
+          FromTop: 5,
+          TextString: "Contact Support",
+          FontSize: 20,
+          TextFontWeight: FontWeight.w500,
+          TextColor: Colors.black87,
+        ),),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -385,25 +380,36 @@ class ContactSupportSection extends StatelessWidget {
                     width: 350,
                     height: 300,
                     color: const Color.fromARGB(255, 255, 255, 255),
-                    child: const Column(
+                    child:  Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Contact Us:',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
+                        Center(
+                          child: ReusableText(
+                            FromTop: 5,
+                            TextString: "Contact Us",
+                            FontSize: 18,
+                            TextFontWeight: FontWeight.w700,
+                            TextColor: Colors.black87,
+                          ),
                         ),
-                        SizedBox(height: 8),
-                        Text(
-                          'If you have any questions, concerns, or need assistance, feel free to reach out to our support team:',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        Text(
-                          'Email: support@example.com',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        Text(
-                          'Phone: +1 (123) 456-7890',
-                          style: TextStyle(fontSize: 16),
+                        ReusableText(
+                          FromTop: 5,
+                          TextString: "If you have any questions, concerns, or need assistance, feel free to reach out to our support team",
+                          FontSize: 16,
+                          TextFontWeight: FontWeight.w400,
+                          TextColor: Colors.black87,
+                        ),ReusableText(
+                          FromTop: 5,
+                          TextString: "Email: ExamCollectors@example.com",
+                          FontSize: 16,
+                          TextFontWeight: FontWeight.w400,
+                          TextColor: Colors.black87,
+                        ),ReusableText(
+                          FromTop: 5,
+                          TextString: "Phone: +251993157092",
+                          FontSize: 16,
+                          TextFontWeight: FontWeight.w400,
+                          TextColor: Colors.black87,
                         ),
                       ],
                     ),
@@ -462,9 +468,9 @@ class UserManualSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorCollections.PrimaryColor,
+      backgroundColor: ColorCollections.PageColor,
       appBar: AppBar(
-        backgroundColor: ColorCollections.PrimaryColor,
+        backgroundColor: ColorCollections.PageColor,
         title: const Center(child: Text('User Manual')),
       ),
       body: SafeArea(
@@ -518,162 +524,94 @@ class HelpSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorCollections.PrimaryColor,
-      appBar: AppBar(
-        backgroundColor: ColorCollections.PrimaryColor,
-        title: const Center(
-          child: Text(
-            'Help',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+        backgroundColor: ColorCollections.PageColor,
+        appBar: AppBar(
+            backgroundColor: ColorCollections.PageColor,
+            title:ReusableText(
+              FromLeft: 15,
+                TextString: 'Help',
+                FontSize: 25,
+                TextColor: Colors.black,
+                TextFontWeight: FontWeight.bold,
+
+            ),
+            leading: Container(
+              margin: EdgeInsets.only(left: 15),
+              child: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  size: 25,
+                ),
+              ),
+            )),
+        body: Center(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 50,
+              ),
+              CommonContainer(title: "FAQs",ontap:(){
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context)=>FAQ_pages())
+                );
+              }),
+              CommonContainer(title: "Tutorials",ontap:(){
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context)=>TutorialsSection())
+                );
+              }),
+              const SizedBox(
+                height: 5,
+              ),
+              CommonContainer(title: "Troubleshooting Section",ontap:(){
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context)=>TroubleshootingSection())
+                );
+              }),
+              const SizedBox(
+                height: 5,
+              ),
+              CommonContainer(title: "Contact Support",ontap:(){
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context)=>ContactSupportSection())
+                );
+              }),
+              const SizedBox(height: 5),
+              CommonContainer(title: "User Manual",ontap:(){
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context)=>UserManualSection())
+                );
+              }),
+            ],
           ),
         ),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+
+    );
+  }
+  Widget CommonContainer({required VoidCallback ontap,required String title,}) {
+    return InkWell(
+      onTap: ontap,
+      child: Container(
+        margin: EdgeInsets.only(top: 10),
+        decoration: BoxDecoration(
+          border: Border.all(color: ColorCollections.TeritiaryColor),
+          borderRadius: BorderRadius.circular(10),
+          color: ColorCollections.WhiteColor,
         ),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 50,
-            ),
-            Container(
-              padding: const EdgeInsets.fromLTRB(22, 0, 22, 0),
-              width: 350,
-              child: ListTile(
-                title: const Text(
-                  'FAQs',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 214, 90, 236),
-                  ),
-                ),
-                tileColor:
-                    Colors.grey[200], // Change the background color as needed
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const FaqSection())),
-              ),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Container(
-              padding: const EdgeInsets.fromLTRB(22, 0, 22, 0),
-              width: 350,
-              child: ListTile(
-                title: const Text(
-                  'Tutorials',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 214, 90, 236),
-                  ),
-                ),
-                tileColor:
-                    Colors.grey[200], // Change the background color as needed
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const TutorialsSection())),
-              ),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Container(
-              padding: const EdgeInsets.fromLTRB(22, 0, 22, 0),
-              width: 350,
-              child: ListTile(
-                title: const Text(
-                  'Trobleshooting Tips',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 214, 90, 236),
-                  ),
-                ),
-                tileColor:
-                    Colors.grey[200], // Change the background color as needed
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const TroubleshootingSection())),
-              ),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Container(
-              padding: const EdgeInsets.fromLTRB(22, 0, 22, 0),
-              width: 350,
-              child: ListTile(
-                title: const Text(
-                  'Contact Support',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 214, 90, 236),
-                  ),
-                ),
-                tileColor:
-                    Colors.grey[200], // Change the background color as needed
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ContactSupportSection())),
-              ),
-            ),
-            const SizedBox(height: 5),
-            Container(
-              padding: const EdgeInsets.fromLTRB(22, 0, 22, 0),
-              width: 350,
-              child: ListTile(
-                title: const Text(
-                  'User Manual',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 214, 90, 236),
-                  ),
-                ),
-                tileColor:
-                    Colors.grey[200], // Change the background color as needed
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const UserManualSection())),
-              ),
-            ),
-          ],
+        padding: EdgeInsets.only(left: 20,right: 20,top: 0),
+        width: 300,
+        height: 50,
+        child: Center(
+          child: ReusableText(
+            FromTop: 0,
+            TextString: title,
+            FontSize: 18,
+            TextFontWeight: FontWeight.w700,
+            TextColor: Colors.black87,
+          ),
         ),
       ),
     );

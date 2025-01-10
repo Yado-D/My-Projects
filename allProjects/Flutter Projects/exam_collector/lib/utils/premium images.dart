@@ -1,6 +1,6 @@
 List<String> PremiumImageList() => [
-      'chemistry',
-      'physics',
-      'maths',
+      'programming',
+      'dart',
+      'flutter',
       'biology',
     ];

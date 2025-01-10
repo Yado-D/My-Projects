@@ -1,8 +1,8 @@
 import 'package:exam_collector_admin_app/Common/name.dart';
 import 'package:exam_collector_admin_app/pages/HomePage/home.dart';
-import 'package:exam_collector_admin_app/pages/NewPostPage/page/PostQuestions/page/post_questions.dart';
+import 'package:exam_collector_admin_app/pages/NewPostPage/page/PostQuestions/page/post_exam_info.dart';
 import 'package:exam_collector_admin_app/pages/NewPostPage/page/PostQuestions/page/result_operation.dart';
-import 'package:exam_collector_admin_app/pages/NewPostPage/page/PostQuestions/page/type_question_page.dart';
+import 'package:exam_collector_admin_app/pages/NewPostPage/page/PostQuestions/page/post_image_of_exam.dart';
 import 'package:exam_collector_admin_app/pages/NewPostPage/page/carouselImage.dart';
 import 'package:exam_collector_admin_app/pages/NewPostPage/page/post_page.dart';
 import 'package:exam_collector_admin_app/pages/NewPostPage/page/sliverView.dart';
@@ -78,18 +78,20 @@ class NamedRouteSettings {
       ),
       pageEntity(
         route: NamedRoutes.POSTQUESIONS_PAGE,
-        page: postQuestions(),
+        page: postExamInfo(),
         // bloc: BlocProvider(
         //   create: (_) => SignInBloc(),
         // ),
       ),
-      pageEntity(
-        route: NamedRoutes.WRITEQUESTION_PAGE,
-        page: TypeQuestionsPage(),
-        // bloc: BlocProvider(
-        //   create: (_) => SignInBloc(),
-        // ),
-      ),
+      // pageEntity(
+      //   route: NamedRoutes.WRITEQUESTION_PAGE,
+      //   page: postExamImagePage(
+      //
+      //   ),
+      //   // bloc: BlocProvider(
+      //   //   create: (_) => SignInBloc(),
+      //   // ),
+      // ),
       pageEntity(
         route: NamedRoutes.RESULT_PAGE,
         page: operation_result(),

@@ -5,7 +5,7 @@ description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 1.0.0+1
+version: 1.1.0+2
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
@@ -31,12 +31,37 @@ dependencies:
   shared_preferences: ^2.2.3
   cloud_firestore: ^5.1.0
   fluttertoast: ^8.2.6
+  image_picker: ^1.1.2
+  emoji_picker_flutter: ^3.1.0
+  uuid:
+  fluid_dialog: ^2.0.0
+  intl:
+  rename_app: ^1.6.1
+  url_launcher: ^6.3.1
+  google_fonts: ^6.2.1
+  photo_view: ^0.15.0
+  dash_chat_2:
+  chat_gpt_sdk:
+  provider: ^6.1.2
+  zoom_widget: ^2.0.1
+  widget_zoom: ^0.0.4
+#  dash_chat:
+#  youtube_player_flutter: ^9.1.1
 
 
 dev_dependencies:
+  flutter_launcher_icons: "^0.14.1"
   flutter_test:
     sdk: flutter
-
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/Images/examC.jpg"
+  min_sdk_android: 24
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/Images/examC.jpg"
+#  min_sdk_android: 21 # android min sdk min:16, default 21
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -60,6 +85,8 @@ flutter:
      - assets/Images/
      - assets/
      - assets/icons/
+     - assets/Images/examC.jpg
+     - assets/Images/Developers/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

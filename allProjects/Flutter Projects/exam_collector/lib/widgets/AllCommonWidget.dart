@@ -1,8 +1,11 @@
+import 'package:exam_collector/Models/UserModels.dart';
 import 'package:exam_collector/Pages/ExamPage/pages/exam_page.dart';
 import 'package:exam_collector/Pages/HomePage/widgets/homePageWidget.dart';
+import 'package:exam_collector/Pages/chatPage/pages/chatPageUi.dart';
 import 'package:exam_collector/Pages/searchPage/page/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/AppColorCollections.dart';
 
@@ -62,7 +65,7 @@ class ReusableText extends StatelessWidget {
       child: Text(
         TextString,
         overflow: TextOverflow.fade,
-        style: TextStyle(
+        style: GoogleFonts.openSans(
           color: TextColor,
           fontSize: FontSize,
           fontWeight: TextFontWeight,
@@ -71,7 +74,9 @@ class ReusableText extends StatelessWidget {
     );
   }
 }
-
+//  color: TextColor,
+//           fontSize: FontSize,
+//           fontWeight: TextFontWeight,
 //this is for button that we use in the app
 
 class AppButton extends StatelessWidget {
@@ -102,32 +107,160 @@ class AppButton extends StatelessWidget {
         boxShadow: const [
           BoxShadow(
             color: ColorCollections.TeritiaryColor,
-            spreadRadius: 2,
+            spreadRadius: 0.5,
             blurRadius: 5,
-            offset: Offset(5, 5),
+            offset: Offset(2, 2),
           ),
         ],
         borderRadius: BorderRadius.circular(10),
         color: ContainerColor.withOpacity(1),
       ),
       child: Center(
-        child: Text(
-          ButtonText,
-          style: TextStyle(
-            fontWeight: ButtonFontWeight,
-            fontSize: FontSize,
-            color: ButtonColor,
-          ),
+        child: ReusableText(
+            TextString: ButtonText,
+            FontSize: FontSize,
+            TextColor: ButtonColor,
+            TextFontWeight:ButtonFontWeight,
         ),
       ),
     );
   }
 }
+//app bar
+
+
+
+AppBar SimpleAppBars(BuildContext context, String title, {bool? isDescription = false}) {
+  return AppBar(
+    leading: Container(
+      margin: EdgeInsets.only(left: 8,bottom: 15),
+      child: IconButton(
+        onPressed: () {
+          if (Navigator.of(context).canPop()) {
+            Navigator.of(context).pop();
+          } else {
+            Navigator.of(context).pushNamed('/home_page');
+          }
+        },
+        icon: Icon(
+          Icons.arrow_back_ios,
+          size: 23,
+          color: Color(0xFF003540),
+        ),
+      ),
+    ),
+    backgroundColor: ColorCollections.PageColor,
+    automaticallyImplyLeading: false,
+    flexibleSpace: Container(
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: const Color.fromARGB(255, 203, 203, 203),
+            width: 1.0,
+          ),
+        ),
+      ),
+      height: 120,
+      padding: EdgeInsets.only(top: 40, left: 10, right: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          FittedBox(
+              child: ReusableText(
+                FromLeft: 70,
+                TextString: title,
+                FontSize: 20,
+                TextColor: Color(0xFF003540),
+                TextFontWeight: FontWeight.bold,
+              ),
+          ),
+        ],
+      ),
+    ),
+    // actions: [
+    //    InkWell(
+    //     onTap: () {
+    //       // Navigator.of(context).pushAndRemoveUntil(
+    //       //     MaterialPageRoute(
+    //       //       builder: (context) => home_page(),
+    //       //     ),
+    //       //         (predicate) => false);
+    //     },
+    //     child: Container(
+    //       margin: EdgeInsets.only(right: 15,bottom: 10),
+    //       child: Icon(
+    //         Icons.cancel,
+    //         size: 26,
+    //         color: ColorCollections.GreyColor,
+    //       ),
+    //     ),
+    //   )
+    // ],
+  );
+}
+
+
+
+
+//custom drop down menue
+
+
+class CommonDropdownButtons extends StatelessWidget {
+  final List<String> items;
+  final void Function(String?)? onChanged;
+  double? MarginRight;
+
+  CommonDropdownButtons({
+    required this.items,
+    required this.onChanged,
+    this.MarginRight = 20,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(left: 0, right: MarginRight!),
+      decoration: BoxDecoration(
+        color: Colors.white, // Replace with your actual color
+        borderRadius: BorderRadius.circular(7),
+        border: Border.all(color: const Color.fromARGB(255, 190, 190, 190)),
+      ),
+      child: DropdownButtonFormField<String>(
+        padding: EdgeInsets.only(left: 15, right: 15),
+        isExpanded: true,
+        decoration: InputDecoration(border: InputBorder.none),
+        focusColor: const Color.fromARGB(255, 237, 236, 236),
+        style: TextStyle(color: Colors.black), // Replace with your actual color
+        value: items.isNotEmpty ? items.first : null,
+        items: items.map((item) {
+          return DropdownMenuItem<String>(
+            value: item,
+            child: ReusableText(
+              FromTop: 0,
+              FromBottom: 0,
+              TextColor: Colors.black, // Replace with your actual color
+              TextString: item,
+              FontSize: 16,
+            ),
+          );
+        }).toList(),
+        onChanged: onChanged,
+      ),
+    );
+  }
+}
+
+
+
+
+
 
 //reusable text field
 
 Widget reusableTextField({
-  required String icon_name,
+  double heightOfContainer = 45,
+  double heightOfTextField =  50,
+  String? icon_name,
   String suffix_icon_name = '',
   required String hintText,
   required String textType,
@@ -140,7 +273,7 @@ Widget reusableTextField({
   double FromLeft = 0,
 }) {
   return Container(
-    height: 50.h,
+    height: heightOfContainer,
     width: WidthOfContainer.w,
     margin: EdgeInsets.only(
       top: FromTop.w,
@@ -151,18 +284,26 @@ Widget reusableTextField({
     decoration: BoxDecoration(
       color: ColorCollections.WhiteColor,
       borderRadius: BorderRadius.circular(10),
-      border: Border.all(color: ColorCollections.TeritiaryColor),
+      border: Border.all(color: ColorCollections.GreyColor),
+      boxShadow: [
+        BoxShadow(
+          color: ColorCollections.GreyColor,
+          spreadRadius: 1,
+          offset: Offset(1, 1),
+          blurRadius: 3,
+        ),
+      ]
     ),
     child: Row(
       children: [
-        Container(
+      icon_name!=null ?  Container(
           height: 16.w,
           width: 16.w,
           margin: const EdgeInsets.only(left: 17),
           child: Image.asset("assets/icons/$icon_name.png"),
-        ),
+        ):SizedBox(),
         SizedBox(
-          height: 50.h,
+          height: heightOfTextField,
           width: widthOfTextField.h,
           child: TextField(
             onChanged: (value) => onchange!(value),
@@ -211,26 +352,28 @@ List<Widget> bottomNavBarPages({
   required BuildContext context,
   required String state,
   required int indexOfCarousel,
-  required Map<String, dynamic>? alpha,
+  // required Map<String, dynamic>? alpha,
+  // required UserModels? userData,
 }) {
   return [
     HomePageWidget(
-      context: context,
+      // userData: userData,
+      // context: context,
       state: state,
       ind: indexOfCarousel,
-      alpha: alpha,
+      // alpha: alpha,
     ),
     const search_page(),
     const exam_page(),
-    CommentPageWidget(),
+    const chatPage(),
   ];
 }
 
 // these are the bottom bar widgets
 
-Widget CommentPageWidget() {
-  return Container(
-    height: 100,
-    color: Colors.green,
-  );
-}
+// Widget CommentPageWidget() {
+//   return Container(
+//     height: 100,
+//     color: Colors.green,
+//   );
+// }

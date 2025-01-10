@@ -70,6 +70,87 @@ class ReusableText extends StatelessWidget {
     );
   }
 }
+//common app bar
+
+
+
+AppBar SimpleAppBars(BuildContext context,bool haveArrowBack, String title, {bool? isDescription = false} ){
+  return AppBar(
+
+    backgroundColor: ColorCollections.PrimaryColor,
+    automaticallyImplyLeading: false,
+    flexibleSpace: Container(
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: const Color.fromARGB(255, 203, 203, 203),
+            width: 1.0,
+          ),
+        ),
+      ),
+      height: 90,
+      padding: EdgeInsets.only(top: 30, left: 0, right: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          haveArrowBack ? Container(
+            margin: EdgeInsets.only(left: 8,bottom: 30,top: 10),
+            child: IconButton(
+              onPressed: () {
+                if (Navigator.of(context).canPop()) {
+                  Navigator.of(context).pop();
+                } else {
+                  Navigator.of(context).pushNamed('/home_page');
+                }
+              },
+              icon: Icon(
+                Icons.arrow_back_ios,
+                size: 26,
+                color: Color(0xFF003540),
+              ),
+            ),
+          ):SizedBox(),
+          Center(
+            child: FittedBox(
+              child: ReusableText(
+                FromLeft: 40,
+                FromRight: 30,
+                TextString: title,
+                FontSize: 26,
+                TextColor: Color(0xFF003540),
+                TextFontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+      ),
+    ),
+    // actions: [
+    //   isDescription == true
+    //       ? InkWell(
+    //     onTap: () {
+    //       Navigator.of(context).pushAndRemoveUntil(
+    //           MaterialPageRoute(
+    //             builder: (context) => home_page(),
+    //           ),
+    //               (predicate) => false);
+    //     },
+    //     child: Container(
+    //       margin: EdgeInsets.only(right: 15,bottom: 10),
+    //       child: Icon(
+    //         Icons.cancel,
+    //         size: 26,
+    //         color: Colors.black,
+    //       ),
+    //     ),
+    //   )
+    //       : SizedBox(),
+    // ],
+  );
+}
+
+
+
 
 //this is for button that we use in the app
 

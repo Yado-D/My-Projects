@@ -1,4 +1,6 @@
+import 'package:exam_collector/Models/UserModels.dart';
 import 'package:exam_collector/Pages/SignInPage/Bloc/SignInBloc.dart';
+import 'package:exam_collector/auth/GetUserDetails.dart';
 import 'package:exam_collector/global.dart';
 import 'package:exam_collector/utils/constants.dart';
 import 'package:exam_collector/utils/fluttertoast.dart';
@@ -38,6 +40,8 @@ class SigninController {
             email: emailAddress,
             password: password,
           );
+          print("passed :  1\n");
+
           if (!credential.user!.emailVerified) {
             //check your inbox
             toastInfo(msg: "You need to verify your email address!");
@@ -45,8 +49,18 @@ class SigninController {
           }
           var user = credential.user;
           if (user != null) {
+
+            print("passed :  2\n");
             Global.storageServices
                 .setBool(AppConstants.STORAGE_DEVICE_OPENED_FIRST, true);
+           Map<String,dynamic> userDetails = await  Getuserdetails(email: emailAddress).userMap();
+            if(userDetails.isEmpty){
+               userDetails = await  Getuserdetails(email: emailAddress).TeacherMap();
+            }
+            print("passed :  3  ${userDetails}\n");
+            Global.storageServices.setData(AppConstants.USERDATA, UserModels.fromJson(userDetails));
+            print("passed :  4  ${userDetails}\n");
+
             //we got user information
             commonSnackBar(context,
                 'Welcome Back! we glad to serve you.ask anything you want to share with us in admin chat.');
@@ -54,7 +68,44 @@ class SigninController {
             //if user type is free we move to home page
             //if usertype is premium we go to premium home page
             //if usertype is none we move to premium page
-            Navigator.of(context).pushNamed('/premium_page');
+
+            //new idea
+
+            try{
+              final userSignInDetails = context.read<SignInBloc>().state;
+              String userEmail = userSignInDetails.email;
+              print("i am about to getting user [rofile to save to shared preference\n");
+              //first got the user data and
+              Future.delayed(const Duration(seconds: 5));
+              Map<String, dynamic> alpha =
+              userDetails;
+              if(alpha != Null){
+                print("$alpha  thi is alpha#################3");
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  '/home_page',
+                      (Route<dynamic> route) => false,
+                  arguments: alpha,
+                );
+              }else{
+                print(alpha);
+                Navigator.of(context)
+                    .pushNamed('/home_page', arguments: {
+                  'userName':"yared",
+                  'userEmail':"yared@gmail.com",
+                  'userPassword':"123456",
+                  'userPhone': "099985755",
+                  'userCurrentStatus':"student",
+                  'userEducationLevel':"degree",
+                  'userUniversity':"AASTU",
+                  'userType':"free",
+
+                });
+              }
+            }catch(e){
+               print(e.toString());
+            }
+
+            ///end
           } else {
             //we got error when fetching user from firebase
             toastInfo(
@@ -82,6 +133,7 @@ class SigninController {
         }
       }
     } catch (e) {
+      print(e.toString());
       print('error!');
     }
   }

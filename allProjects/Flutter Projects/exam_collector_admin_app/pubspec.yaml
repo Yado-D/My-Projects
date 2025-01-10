@@ -49,6 +49,8 @@ dependencies:
   shared_preferences: ^2.2.3
   cloud_firestore: ^5.1.0
   fluttertoast: ^8.2.6
+  image_picker: ^1.1.2
+  uuid: ^4.5.1
 
 dev_dependencies:
   flutter_test:
