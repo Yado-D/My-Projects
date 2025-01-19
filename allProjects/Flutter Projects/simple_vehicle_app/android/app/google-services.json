@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "435100924849",
+    "project_id": "simplevehicle-896c0",
+    "storage_bucket": "simplevehicle-896c0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435100924849:android:f82af8078126231c291b90",
+        "android_client_info": {
+          "package_name": "com.example.simple_vehicle_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBunKNZnQxQfsq8kRsgBgtkAml8Fd0z3pE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
